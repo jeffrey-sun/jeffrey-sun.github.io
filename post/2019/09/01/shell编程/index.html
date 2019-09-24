@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-09-01T21:51:54&#43;08:00" />
 <meta itemprop="dateModified" content="2019-09-17T22:23:02&#43;08:00" />
-<meta itemprop="wordCount" content="5722">
+<meta itemprop="wordCount" content="7418">
 
 
 
@@ -132,8 +132,8 @@
             <a href="/categories/note/"> Note </a>
             <a href="/categories/shell/"> shell </a>
             </div>
-          <span class="more-meta"> 约 5722 字 </span>
-          <span class="more-meta"> 预计阅读 12 分钟 </span>
+          <span class="more-meta"> 约 7418 字 </span>
+          <span class="more-meta"> 预计阅读 15 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -168,6 +168,10 @@
 <li><a href="#for循环">for循环</a></li>
 <li><a href="#while循环">while循环</a></li>
 <li><a href="#until-循环">until 循环</a></li>
+<li><a href="#shell-break和continue命令">Shell break和continue命令</a></li>
+<li><a href="#shell函数-shell函数返回值-删除函数-在终端调用函数">Shell函数：Shell函数返回值、删除函数、在终端调用函数</a></li>
+<li><a href="#shell输入输出重定向-shell-here-document-dev-null文件">Shell输入输出重定向：Shell Here Document，/dev/null文件</a></li>
+<li><a href="#shell文件包含">Shell文件包含</a></li>
 <li><a href="#常用代码块">常用代码块</a></li>
 </ul></li>
 </ul></li>
@@ -206,11 +210,11 @@
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Shell for循环</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Shell while循环</label></li>
 <li><label><input type="checkbox" checked disabled class="task-list-item"> Shell until循环</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Shell跳出循环</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Shell函数</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Shell函数参数</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Shell输入输出重定向</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Shell文件包含</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Shell跳出循环</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Shell函数</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Shell函数参数</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Shell输入输出重定向</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Shell文件包含</label></li>
 </ul>
 
 <h2 id="笔记">笔记</h2>
@@ -2112,6 +2116,489 @@ $</code></pre></td></tr></table>
 <span class="k">done</span></code></pre></td></tr></table>
 </div>
 </div>
+<h3 id="shell-break和continue命令">Shell break和continue命令</h3>
+
+<p>break命令允许跳出所有循环（终止执行后面的所有循环）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">while</span> :
+<span class="k">do</span>
+    <span class="nb">echo</span> -n <span class="s2">&#34;Input a number between 1 to 5: &#34;</span>
+    <span class="nb">read</span> aNum
+    <span class="k">case</span> <span class="nv">$aNum</span> in
+        <span class="m">1</span><span class="p">|</span><span class="m">2</span><span class="p">|</span><span class="m">3</span><span class="p">|</span><span class="m">4</span><span class="p">|</span><span class="m">5</span><span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;Your number is </span><span class="nv">$aNum</span><span class="s2">!&#34;</span>
+        <span class="p">;;</span>
+        *<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;You do not select a number between 1 to 5, game is over!&#34;</span>
+            <span class="nb">break</span>
+        <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">done</span>
+
+<span class="c1"># 在嵌套循环中，break 命令后面还可以跟一个整数，表示跳出第几层循环</span>
+
+<span class="k">for</span> var1 in <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+<span class="k">do</span>
+   <span class="k">for</span> var2 in <span class="m">0</span> <span class="m">5</span>
+   <span class="k">do</span>
+      <span class="k">if</span> <span class="o">[</span> <span class="nv">$var1</span> -eq <span class="m">2</span> -a <span class="nv">$var2</span> -eq <span class="m">0</span> <span class="o">]</span>
+      <span class="k">then</span>
+         <span class="nb">break</span> <span class="m">2</span>
+      <span class="k">else</span>
+         <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$var1</span><span class="s2"> </span><span class="nv">$var2</span><span class="s2">&#34;</span>
+      <span class="k">fi</span>
+   <span class="k">done</span>
+<span class="k">done</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>continue命令与break命令类似，只有一点差别，它不会跳出所有循环，仅仅跳出当前循环</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="k">while</span> :
+<span class="k">do</span>
+    <span class="nb">echo</span> -n <span class="s2">&#34;Input a number between 1 to 5: &#34;</span>
+    <span class="nb">read</span> aNum
+    <span class="k">case</span> <span class="nv">$aNum</span> in
+        <span class="m">1</span><span class="p">|</span><span class="m">2</span><span class="p">|</span><span class="m">3</span><span class="p">|</span><span class="m">4</span><span class="p">|</span><span class="m">5</span><span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;Your number is </span><span class="nv">$aNum</span><span class="s2">!&#34;</span>
+        <span class="p">;;</span>
+        *<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;You do not select a number between 1 to 5!&#34;</span>
+            <span class="k">continue</span>
+            <span class="nb">echo</span> <span class="s2">&#34;Game is over!&#34;</span>
+        <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">done</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="shell函数-shell函数返回值-删除函数-在终端调用函数">Shell函数：Shell函数返回值、删除函数、在终端调用函数</h3>
+
+<p>Shell 函数的定义格式如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">function_name <span class="o">()</span> <span class="o">{</span>
+    list of commands
+    <span class="o">[</span> <span class="k">return</span> value <span class="o">]</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>如果你愿意，也可以在函数名前加上关键字 function：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="k">function</span> function_name <span class="o">()</span> <span class="o">{</span>
+    list of commands
+    <span class="o">[</span> <span class="k">return</span> value <span class="o">]</span>
+<span class="o">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>函数返回值，可以显式增加return语句；如果不加，会将最后一条命令运行结果作为返回值。</p>
+
+<p>demo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="c1"># Define your function here</span>
+Hello <span class="o">()</span> <span class="o">{</span>
+   <span class="nb">echo</span> <span class="s2">&#34;Url is http://blog.jeffreysun.net/&#34;</span>
+<span class="o">}</span>
+<span class="c1"># Invoke your function</span>
+Hello
+
+<span class="c1">#####</span>
+<span class="c1"># Url is http://blog.jeffreysun.net/</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">funWithReturn<span class="o">(){</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The function is to get the sum of two numbers...&#34;</span>
+    <span class="nb">echo</span> -n <span class="s2">&#34;Input first number: &#34;</span>
+    <span class="nb">read</span> aNum
+    <span class="nb">echo</span> -n <span class="s2">&#34;Input another number: &#34;</span>
+    <span class="nb">read</span> anotherNum
+    <span class="nb">echo</span> <span class="s2">&#34;The two numbers are </span><span class="nv">$aNum</span><span class="s2"> and </span><span class="nv">$anotherNum</span><span class="s2"> !&#34;</span>
+    <span class="k">return</span> <span class="k">$((</span><span class="nv">$aNum</span><span class="o">+</span><span class="nv">$anotherNum</span><span class="k">))</span>
+<span class="o">}</span>
+funWithReturn
+<span class="c1"># Capture value returnd by last command</span>
+<span class="nv">ret</span><span class="o">=</span><span class="nv">$?</span>
+<span class="nb">echo</span> <span class="s2">&#34;The sum of two numbers is </span><span class="nv">$ret</span><span class="s2"> !&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>像删除变量一样，删除函数也可以使用 unset 命令，不过要加上 .f 选项，如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">unset</span> .f function_name</code></pre></td></tr></table>
+</div>
+</div>
+<p>在Shell中，调用函数时可以向其传递参数。在函数体内部，通过 $n 的形式来获取参数的值，例如，$1表示第一个参数，$2表示第二个参数&hellip;</p>
+
+<p>带参数的函数示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>funWithParam<span class="o">(){</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The value of the first parameter is </span><span class="nv">$1</span><span class="s2"> !&#34;</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The value of the second parameter is </span><span class="nv">$2</span><span class="s2"> !&#34;</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The value of the tenth parameter is </span><span class="nv">$10</span><span class="s2"> !&#34;</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The value of the tenth parameter is </span><span class="si">${</span><span class="nv">10</span><span class="si">}</span><span class="s2"> !&#34;</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The value of the eleventh parameter is </span><span class="si">${</span><span class="nv">11</span><span class="si">}</span><span class="s2"> !&#34;</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The amount of the parameters is </span><span class="nv">$#</span><span class="s2"> !&#34;</span>  <span class="c1"># 参数个数</span>
+    <span class="nb">echo</span> <span class="s2">&#34;The string of the parameters is </span><span class="nv">$*</span><span class="s2"> !&#34;</span>  <span class="c1"># 传递给函数的所有参数</span>
+<span class="o">}</span>
+funWithParam <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">34</span> <span class="m">73</span>
+
+<span class="c1">#### 输出</span>
+
+<span class="c1"># The value of the first parameter is 1 !</span>
+<span class="c1"># The value of the second parameter is 2 !</span>
+<span class="c1"># The value of the tenth parameter is 10 !</span>
+<span class="c1"># The value of the tenth parameter is 34 !</span>
+<span class="c1"># The value of the eleventh parameter is 73 !</span>
+<span class="c1"># The amount of the parameters is 12 !</span>
+<span class="c1"># The string of the parameters is 1 2 3 4 5 6 7 8 9 34 73 !&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+<table>
+<thead>
+<tr>
+<th align="left">特殊变量</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">$#</td>
+<td align="left">传递给函数的参数个数。</td>
+</tr>
+
+<tr>
+<td align="left">$*</td>
+<td align="left">显示所有传递给函数的参数。</td>
+</tr>
+
+<tr>
+<td align="left">$@</td>
+<td align="left">与$*相同，但是略有区别，请查看Shell特殊变量。</td>
+</tr>
+
+<tr>
+<td align="left">$?</td>
+<td align="left">函数的返回值。</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="shell输入输出重定向-shell-here-document-dev-null文件">Shell输入输出重定向：Shell Here Document，/dev/null文件</h3>
+
+<p>输出重定向, 语法为：<code>command &gt; file</code>
+输入重定向，语法为：<code>command &lt; file</code></p>
+
+<p>一般情况下，每个 Unix/Linux 命令运行时都会打开三个文件：</p>
+
+<ul>
+<li>标准输入文件(stdin)：stdin的文件描述符为0，Unix程序默认从stdin读取数据。</li>
+<li>标准输出文件(stdout)：stdout 的文件描述符为1，Unix程序默认向stdout输出数据。</li>
+<li>标准错误文件(stderr)：stderr的文件描述符为2，Unix程序会向stderr流中写入错误信息。</li>
+</ul>
+
+<p>demo:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># stderr 重定向到 file</span>
+<span class="nv">$command</span> <span class="m">2</span> &gt; file
+
+
+<span class="c1"># stderr 追加到 file 文件末尾</span>
+<span class="nv">$command</span> <span class="m">2</span> &gt;&gt; file
+
+
+<span class="c1"># 将 stdout 和 stderr 合并后重定向到 file</span>
+<span class="nv">$command</span> &gt; file <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="c1"># 或</span>
+<span class="nv">$command</span> &gt;&gt; file <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+
+
+<span class="c1"># command 命令将 stdin 重定向到 file1，将 stdout 重定向到 file2</span>
+<span class="nv">$command</span> &lt; file1 &gt;file2</code></pre></td></tr></table>
+</div>
+</div>
+<p>全部可用的重定向命令列表</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">command &gt; file</td>
+<td align="left">将输出重定向到 file。</td>
+</tr>
+
+<tr>
+<td align="left">command &lt; file</td>
+<td align="left">将输入重定向到 file。</td>
+</tr>
+
+<tr>
+<td align="left">command &gt;&gt; file</td>
+<td align="left">将输出以追加的方式重定向到 file。</td>
+</tr>
+
+<tr>
+<td align="left">n &gt; file</td>
+<td align="left">将文件描述符为 n 的文件重定向到 file。</td>
+</tr>
+
+<tr>
+<td align="left">n &gt;&gt; file</td>
+<td align="left">将文件描述符为 n 的文件以追加的方式重定向到 file。</td>
+</tr>
+
+<tr>
+<td align="left">n &gt;&amp; m</td>
+<td align="left">将输出文件 m 和 n 合并。</td>
+</tr>
+
+<tr>
+<td align="left">n &lt;&amp; m</td>
+<td align="left">将输入文件 m 和 n 合并。</td>
+</tr>
+
+<tr>
+<td align="left">&lt;&lt; tag</td>
+<td align="left">将开始标记 tag 和结束标记 tag 之间的内容作为输入。</td>
+</tr>
+</tbody>
+</table>
+
+<p>Here Document</p>
+
+<p>语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> <span class="s">&lt;&lt; delimiter
+</span><span class="s">    document
+</span><span class="s">delimiter</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>demo</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">wc -l <span class="s">&lt;&lt; EOF
+</span><span class="s">    This is a simple lookup program
+</span><span class="s">    for good (and bad) restaurants
+</span><span class="s">    in Cape Town.
+</span><span class="s">EOF</span>
+
+<span class="c1"># ### std</span>
+<span class="c1"># 3</span>
+
+<span class="c1">#  vi 编辑器将 document 保存到 test.txt 文件</span>
+<span class="nv">filename</span><span class="o">=</span>test.txt
+vi <span class="nv">$filename</span> <span class="s">&lt;&lt;EndOfCommands
+</span><span class="s">i
+</span><span class="s">This file was created automatically from
+</span><span class="s">a shell script
+</span><span class="s">^[
+</span><span class="s">ZZ
+</span><span class="s">EndOfCommands</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>/dev/null 文件</p>
+
+<p>如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">command</span> &gt; /dev/null
+
+<span class="c1"># 屏蔽 stdout 和 stderr</span>
+<span class="nb">command</span> &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="shell文件包含">Shell文件包含</h3>
+
+<p>像其他语言一样，Shell 也可以包含外部脚本，将外部脚本的内容合并到当前脚本。</p>
+
+<p>Shell 中包含脚本可以使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">. filename</code></pre></td></tr></table>
+</div>
+</div>
+<p>或</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">source</span> filename</code></pre></td></tr></table>
+</div>
+</div>
+<p>两种方式的效果相同，简单起见，一般使用点号(.)，但是注意点号(.)和文件名中间有一空格。</p>
+
 <h3 id="常用代码块">常用代码块</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
