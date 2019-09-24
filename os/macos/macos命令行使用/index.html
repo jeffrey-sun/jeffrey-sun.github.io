@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="MacOS命令行使用"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="MacOS命令行使用 &middot; Jeffrey Blog" />
+  	<meta property="og:site_name" content="Jeffrey Blog" />
+  	<meta property="og:url" content="https://blog.jeffreysun.net/os/macos/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/" />
+
+    
+        
+            <meta property="og:image" content="/images/sea.jpeg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2019-05-22T16:43:43&#43;08:00" />
+
+    
+    <meta property="article:tag" content="os" />
+    
+    <meta property="article:tag" content="macos" />
+    
+    
+
+    <title>MacOS命令行使用 &middot; Jeffrey Blog</title>
+
+    
+    <meta name="description" content=" 命令行跳转  Ctrl&#43;A：到行首（达到Home键的效果）
+Ctrl&#43;E：到行尾（达到End键的效果）
+Ctrl&#43;N：到下一行
+Ctrl&#43;P：到上一行
+Ctrl&#43;K：从光标处开始删除，直到行尾
+fn键&#43;左方向键是HOME
+fn键&#43;右方向键是END
+fn&#43;上方向键是page up
+fn&#43;下方向键是page down
+ " />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://blog.jeffreysun.net/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="https://blog.jeffreysun.net/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="https://blog.jeffreysun.net/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="https://blog.jeffreysun.net/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/atom-one-light.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="https://blog.jeffreysun.net/index.xml" rel="alternate" type="application/rss+xml" title="Jeffrey Blog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.55.5" />
+
+    <link rel="canonical" href="https://blog.jeffreysun.net/os/macos/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null ,
+        "logo": "https://blog.jeffreysun.net/images/logo.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blog.jeffreysun.net/images/logo.jpg",
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": "jeffreysun.net",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "坚持就是胜利"
+        
+    },
+    "headline": "MacOS命令行使用",
+    "name": "MacOS命令行使用",
+    "wordCount":  12 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://blog.jeffreysun.net/os/macos/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/",
+    "datePublished": "2019-05-22T16:43Z",
+    "dateModified": "2019-05-22T16:43Z",
+    
+    "keywords": "os, macos",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://blog.jeffreysun.net/os/macos/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://blog.jeffreysun.net/">首页</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://blog.jeffreysun.net/tags/code">编码</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://blog.jeffreysun.net/tags/os">系统</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://blog.jeffreysun.net/about">关于我</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://blog.jeffreysun.net/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="https://blog.jeffreysun.net/"><img src="https://blog.jeffreysun.net/images/logo.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post os">
+
+    <header class="post-header">
+        <h1 class="post-title">MacOS命令行使用</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+         
+          <span class="post-tag small"><a href="https://blog.jeffreysun.net//tags/os/">#os</a></span>
+         
+          <span class="post-tag small"><a href="https://blog.jeffreysun.net//tags/macos/">#macos</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h2 id="命令行跳转">命令行跳转</h2>
+
+<blockquote>
+<p>Ctrl+A：到行首（达到Home键的效果）</p>
+
+<p>Ctrl+E：到行尾（达到End键的效果）</p>
+
+<p>Ctrl+N：到下一行</p>
+
+<p>Ctrl+P：到上一行</p>
+
+<p>Ctrl+K：从光标处开始删除，直到行尾</p>
+
+<p>fn键+左方向键是HOME</p>
+
+<p>fn键+右方向键是END</p>
+
+<p>fn+上方向键是page up</p>
+
+<p>fn+下方向键是page down</p>
+</blockquote>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="https://blog.jeffreysun.net/" style="background-image: url(/images/logo.jpg)"><span class="hidden">JeffreySun's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="https://blog.jeffreysun.net/">JeffreySun</a></h4>
+  
+  <p>坚持就是胜利</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Wuhan, China</span>
+    <span class="author-link icon-link"><a href="jeffreysun.net">jeffreysun.net</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this os</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=MacOS%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%bd%bf%e7%94%a8&nbsp;-&nbsp;Jeffrey%20Blog&amp;url=https%3a%2f%2fblog.jeffreysun.net%2fos%2fmacos%2fmacos%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E4%25BD%25BF%25E7%2594%25A8%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fblog.jeffreysun.net%2fos%2fmacos%2fmacos%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E4%25BD%25BF%25E7%2594%25A8%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fblog.jeffreysun.net%2fos%2fmacos%2fmacos%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E4%25BD%25BF%25E7%2594%25A8%2f&amp;description=MacOS%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%bd%bf%e7%94%a8"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fblog.jeffreysun.net%2fos%2fmacos%2fmacos%25E5%2591%25BD%25E4%25BB%25A4%25E8%25A1%258C%25E4%25BD%25BF%25E7%2594%25A8%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Jeffrey Blog</a> All rights reserved - 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://blog.jeffreysun.net/js/jquery.js"></script>
+    <script type="text/javascript" src="https://blog.jeffreysun.net/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="https://blog.jeffreysun.net/js/index.js"></script>
+    
+</body>
+</html>
+

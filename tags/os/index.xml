@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>os on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/os/</link>
+    <description>Recent content in os on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 May 2019 16:43:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MacOS命令行使用</title>
+      <link>https://blog.jeffreysun.net/post/2019/05/22/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 22 May 2019 16:43:43 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/05/22/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/</guid>
+      <description>命令行跳转 Ctrl+A：到行首（达到Home键的效果） Ctrl+E：到行尾（达到End键的效果） Ctrl+N：到下一行 Ctrl+P：到上一行</description>
+    </item>
+    
+  </channel>
+</rss>

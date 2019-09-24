@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/docker/</link>
+    <description>Recent content in docker on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 May 2019 10:34:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>基础镜像配置</title>
+      <link>https://blog.jeffreysun.net/post/2019/05/22/%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 22 May 2019 10:34:12 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/05/22/%E5%9F%BA%E7%A1%80%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE/</guid>
+      <description>apline 修改alpine镜像源 使用阿里云的源 https://mirrors.aliyun.com 1 sed -i &amp;#39;s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g&amp;#39; /etc/apk/repositories apk 的基本使用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 $ apk add # 安装软件 $ apk add asterisk=1.6.0.21-r0 #安装指定</description>
+    </item>
+    
+    <item>
+      <title>docker 容器无法删除</title>
+      <link>https://blog.jeffreysun.net/post/2018/04/19/docker-%E5%AE%B9%E5%99%A8%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/</link>
+      <pubDate>Thu, 19 Apr 2018 21:38:35 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/04/19/docker-%E5%AE%B9%E5%99%A8%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/</guid>
+      <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
+
+&lt;p&gt;使用docker 过程中经常直接重启了docker服务，导致正在运行的容器异常退出，删除的时候会报错。在这里总结一下遇到的无法删除容器的教训。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker容器时区修改</title>
+      <link>https://blog.jeffreysun.net/post/2018/04/18/docker%E5%AE%B9%E5%99%A8%E6%97%B6%E5%8C%BA%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Wed, 18 Apr 2018 11:01:23 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/04/18/docker%E5%AE%B9%E5%99%A8%E6%97%B6%E5%8C%BA%E4%BF%AE%E6%94%B9/</guid>
+      <description>&lt;h1 id=&#34;docker容器修改时区&#34;&gt;docker容器修改时区&lt;/h1&gt;
+
+&lt;p&gt;在容器中，执行&lt;code&gt;date&lt;/code&gt;显示的时间可能出现八小时的时间差，这是因为docker默认使用时区为0。&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;/usr/share/zoneinfo&lt;/code&gt;目录下有大量的时区文件，根据自己的需要把自己需要的时区信息拷贝到&lt;code&gt;/etc/&lt;/code&gt;目录下，重命名为 &lt;code&gt;localtime&lt;/code&gt;就可以。这里我一般使用 &lt;code&gt;cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/code&gt; 。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker开启远程访问</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/27/docker%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/</link>
+      <pubDate>Tue, 27 Mar 2018 14:21:18 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/27/docker%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/</guid>
+      <description>&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
+
+&lt;p&gt;Docker采用&lt;code&gt;C/S&lt;/code&gt;架构，包括客户端和服务端。Docker守护进程（Daemon）作为服务端接受来自客户端的请求，并处理这些请求（ 创建、 运行、 分发容器）。Docker从 0.5.2 之后使用本地Unix套接字机制强制代替了原先绑定在127.0.0.1 上的套接字，以加强服务端的防护。用户任然可以使用HTTP提供REST API 访问。建议使用安全机制，确保只有可行的网络或VPN，或证书保护机制（例如受保护的stunnel和ssl认证）下的访问可以进行。
+这里简单说明开启 REST API的过程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker容器网络设置</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/26/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Mon, 26 Mar 2018 14:04:58 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/26/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
+
+&lt;p&gt;docker 是一个非常方便的工具，在在使用过程中，需要使用一些网络相关的信息。找了一些资料，在这里做点笔记。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>docker部署Jenkins集成环境</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/22/docker%E9%83%A8%E7%BD%B2jenkins%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 22 Mar 2018 22:45:29 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/22/docker%E9%83%A8%E7%BD%B2jenkins%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83/</guid>
+      <description>docker run -dit &amp;ndash;rm -p 8080:8080 -p 50000:50000 &amp;ndash;name jenkins &amp;ndash;net jenkins &amp;ndash;ip 172.18.1.2 -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker &amp;ndash;mount source=jenkins-home,target=/var/jenkins_home -v $(which git):/usr/bin/git jenkins/jenkins:lts</description>
+    </item>
+    
+    <item>
+      <title>docker设置</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/13/docker%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Tue, 13 Mar 2018 20:57:17 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/13/docker%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;docker代理设置&lt;/li&gt;
+&lt;li&gt;docker镜像加速&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

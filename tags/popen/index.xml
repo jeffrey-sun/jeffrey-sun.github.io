@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>popen on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/popen/</link>
+    <description>Recent content in popen on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 26 Jun 2018 15:27:40 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/popen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python popen问题</title>
+      <link>https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 26 Jun 2018 15:27:40 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/</guid>
+      <description>背景 一次艰辛的python代码调试。 poen函数，先后遇到 子进程kill不掉、 执行任务text file busy（让我一个英语盲， 竟然能这么熟练的敲</description>
+    </item>
+    
+  </channel>
+</rss>

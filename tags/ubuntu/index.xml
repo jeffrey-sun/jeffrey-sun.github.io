@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Mar 2018 10:20:45 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ubuntu16.04 容器安装ifconfig ping ip 命令</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/27/ubuntu16.04-%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85ifconfig-ping-ip-%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 27 Mar 2018 10:20:45 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/27/ubuntu16.04-%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85ifconfig-ping-ip-%E5%91%BD%E4%BB%A4/</guid>
+      <description>进入容器，发现没有ifconfig ip ping 等命令。这里做一下记录 准备 更新一下缓存 1 apt-get update ifconfig 1 apt install net-tools ping 1 apt-get install iputils-ping ip 1 apt-get install iproute2</description>
+    </item>
+    
+    <item>
+      <title>ubuntu登录提示有软件包可以更新</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/20/ubuntu%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E6%9C%89%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%96%B0/</link>
+      <pubDate>Tue, 20 Mar 2018 17:44:34 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/20/ubuntu%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E6%9C%89%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%96%B0/</guid>
+      <description>Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。 升级</description>
+    </item>
+    
+    <item>
+      <title>ubuntu16.04启动类型设置</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/13/ubuntu16.04%E5%90%AF%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Tue, 13 Mar 2018 17:05:37 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/13/ubuntu16.04%E5%90%AF%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%AE%BE%E7%BD%AE/</guid>
+      <description>说明 针对操作系统： ubuntu 16.04 LTS ubuntu桌面启动 正常安装的ubuntu桌面版是桌面启动的，不需要任何配置，需要使用命令行，新建终端即可 ubunt</description>
+    </item>
+    
+  </channel>
+</rss>

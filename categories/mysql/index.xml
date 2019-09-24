@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/categories/mysql/</link>
+    <description>Recent content in Mysql on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Aug 2018 16:53:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>centos7.2 安装mysql 5.7</title>
+      <link>https://blog.jeffreysun.net/post/2018/08/06/centos7.2-%E5%AE%89%E8%A3%85mysql-5.7/</link>
+      <pubDate>Mon, 06 Aug 2018 16:53:23 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/08/06/centos7.2-%E5%AE%89%E8%A3%85mysql-5.7/</guid>
+      <description>背景 需要安装 sonarqube，使用mysql的话需要使用5.6或以上版本，我这边能找到的mysql服务基本是5.5.32就是最新的了，还能</description>
+    </item>
+    
+  </channel>
+</rss>

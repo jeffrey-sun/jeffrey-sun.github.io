@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/code/</link>
+    <description>Recent content in code on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 May 2019 12:03:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx 多站点域名代理配置</title>
+      <link>https://blog.jeffreysun.net/post/2019/05/20/ngnix-domin-config/</link>
+      <pubDate>Mon, 20 May 2019 12:03:26 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/05/20/ngnix-domin-config/</guid>
+      <description>&lt;p&gt;之前买了一个虚拟主机， 想着没事做个博客玩一下。 刚好最近在学习docker。 就想着使用docker来部署我的站点。 想着后面可能会将多个域名只想这台主机（也许最后只有一个域名）， 就想折腾一下。
+当前主流的WEB服务是 Apache和Nginx。 听说Ngnix，功能比较多，工作中接触比较少，就选Ngnix。 嗯，我对比了解的技术还是有很强的好奇心的（no zuo no die）。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

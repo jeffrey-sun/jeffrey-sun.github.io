@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CA on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/ca/</link>
+    <description>Recent content in CA on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 27 Nov 2017 11:43:48 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/ca/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>openssl自签名证书</title>
+      <link>https://blog.jeffreysun.net/post/2017/11/27/openssl%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</link>
+      <pubDate>Mon, 27 Nov 2017 11:43:48 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2017/11/27/openssl%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;在工作中，遇到一个要写agent的场景，因为agent具有一定的执行能，且由控制端发起，因此就需要考虑安全问题。因为代码需要部署到客户机器上，简单使用对称加密不安全，主要是担心密钥不安全。因此选用了 SSL/TLS 协议。 使用的python有库可以选用，因此，最大的工作量还是 证书的生成。&lt;/p&gt;
+
+&lt;p&gt;找到 一个比较全的资料&lt;a href=&#34;http://blog.csdn.net/howeverpf/article/details/21622545&#34;&gt;如何使用OpenSSL工具生成根证书与应用证书&lt;/a&gt;，在此留档，以供参考。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

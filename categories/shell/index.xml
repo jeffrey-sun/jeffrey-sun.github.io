@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/categories/shell/</link>
+    <description>Recent content in shell on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Sep 2019 21:51:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/categories/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shell编程</title>
+      <link>https://blog.jeffreysun.net/post/2019/09/01/shell%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Sun, 01 Sep 2019 21:51:54 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/09/01/shell%E7%BC%96%E7%A8%8B/</guid>
+      <description>学习文章来源文本来源 Linux Shell脚本教程：30分钟玩转Shell脚本编程。 文章名字很霸气，30分钟学会，看了一下目录，内容不是很多，基本覆盖</description>
+    </item>
+    
+  </channel>
+</rss>

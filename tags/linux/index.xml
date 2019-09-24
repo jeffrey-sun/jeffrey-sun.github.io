@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/linux/</link>
+    <description>Recent content in linux on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 18 Apr 2018 11:01:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>docker容器时区修改</title>
+      <link>https://blog.jeffreysun.net/post/2018/04/18/docker%E5%AE%B9%E5%99%A8%E6%97%B6%E5%8C%BA%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Wed, 18 Apr 2018 11:01:23 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/04/18/docker%E5%AE%B9%E5%99%A8%E6%97%B6%E5%8C%BA%E4%BF%AE%E6%94%B9/</guid>
+      <description>docker容器修改时区 在容器中，执行date显示的时间可能出现八小时的时间差，这是因为docker默认使用时区为0。 在/usr/share</description>
+    </item>
+    
+  </channel>
+</rss>

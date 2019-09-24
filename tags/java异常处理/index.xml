@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java异常处理 on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+    <description>Recent content in java异常处理 on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 04 Dec 2017 17:08:13 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 UnsupportedOperationException 异常</title>
+      <link>https://blog.jeffreysun.net/post/2017/12/04/%E8%A7%A3%E5%86%B3-unsupportedoperationexception-%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Mon, 04 Dec 2017 17:08:13 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2017/12/04/%E8%A7%A3%E5%86%B3-unsupportedoperationexception-%E5%BC%82%E5%B8%B8/</guid>
+      <description>异常现象 1 2 3 java.lang.UnsupportedOperationException: null at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45] at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45] 解决 因为本处使用了以下代码： 1 2 List&amp;lt;Integer&amp;gt; temp = Arrays.asList(arr); temp.add(1); 使用 Arrays.asList()转换的List不支持add() 和 r</description>
+    </item>
+    
+  </channel>
+</rss>

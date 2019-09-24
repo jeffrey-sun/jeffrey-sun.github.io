@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>python popen问题 - Jeffrey&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="jeffrey" /><meta name="description" content="背景 一次艰辛的python代码调试。 poen函数，先后遇到 子进程kill不掉、 执行任务text file busy（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.58.1 with theme even" />
+
+
+<link rel="canonical" href="https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="python popen问题" />
+<meta property="og:description" content="背景
+
+一次艰辛的python代码调试。 poen函数，先后遇到 子进程kill不掉、 执行任务text file busy（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2018-06-26T15:27:40+00:00" />
+<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta itemprop="name" content="python popen问题">
+<meta itemprop="description" content="背景
+
+一次艰辛的python代码调试。 poen函数，先后遇到 子进程kill不掉、 执行任务text file busy（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。">
+
+
+<meta itemprop="datePublished" content="2018-06-26T15:27:40&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
+<meta itemprop="wordCount" content="1420">
+
+
+
+<meta itemprop="keywords" content="python," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="python popen问题"/>
+<meta name="twitter:description" content="背景
+
+一次艰辛的python代码调试。 poen函数，先后遇到 子进程kill不掉、 执行任务text file busy（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jeffrey&#39;s blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jeffrey&#39;s blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">python popen问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-06-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
+            <a href="/categories/python/"> Python </a>
+            </div>
+          <span class="more-meta"> 约 1420 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#背景">背景</a></li>
+<li><a href="#问题一-pipe管道堵塞">问题一： pipe管道堵塞</a></li>
+<li><a href="#问题二-子进程kill不了">问题二： 子进程kill不了</a></li>
+<li><a href="#问题三-text-file-busy">问题三： Text file busy</a></li>
+<li><a href="#问题四-性能问题">问题四： 性能问题</a></li>
+<li><a href="#总结">总结</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-26T13:32:15" title="May 26, 2019">May 26, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+    <div class="post-content">
+      <h1 id="背景">背景</h1>
+
+<p>一次艰辛的python代码调试。 poen函数，先后遇到 <code>子进程kill不掉</code>、 <code>执行任务text file busy</code>（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。</p>
+
+<h1 id="问题一-pipe管道堵塞">问题一： pipe管道堵塞</h1>
+
+<p>我们采用管道方式收集输出信息，使用 <code>poll</code> 方法检测是否结束。 好的， 问题来了。 当子进行一次输出较大日志量的时候会堵死管道， 子进程阻塞。 我们需要使用超时等机制， python2.7 的 communicate 方法没有 超时选项。 因此采用了 threading模块的 的 timer 设置超时， 主服务读取管道，保证不会是管道堵死。 嗯，这样就好了，完美。</p>
+
+<h1 id="问题二-子进程kill不了">问题二： 子进程kill不了</h1>
+
+<p>等等，这个我超时设置的5S，怎么10S了还不返回！看看，转态变了，kill 执行了，为什么还不返回？
+找到好像是shell参数设置为True， 多启动了一层进行，而我们调用的命令会生成更多的子进程，虽然kill了一个，但是它的子子孙孙一堆都还在， 管道也没有关闭，主服务线程依然还在读管道，不会停止。 因此， 需要找能够kill子子孙孙的办法。 最后在 <a href="https://stackoverflow.com/questions/4789837/how-to-terminate-a-python-subprocess-launched-with-shell-true">stackoverflow</a>找到了高票的回复，可以kill process group。 实例代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">signal</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+
+<span class="c1"># The os.setsid() is passed in the argument preexec_fn so</span>
+<span class="c1"># it&#39;s run after the fork() and before  exec() to run the shell.</span>
+<span class="n">pro</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> 
+                       <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">setsid</span><span class="p">)</span> 
+
+<span class="n">os</span><span class="o">.</span><span class="n">killpg</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getpgid</span><span class="p">(</span><span class="n">pro</span><span class="o">.</span><span class="n">pid</span><span class="p">),</span> <span class="n">signal</span><span class="o">.</span><span class="n">SIGTERM</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>嗯，按着这个测试，哦哦，可以kill了。 果然是 stackoverflow ，编程问题来这里一定可以。 嗯，这样就好了，完美。</p>
+
+<h1 id="问题三-text-file-busy">问题三： Text file busy</h1>
+
+<p>上线了， 终于可以休息了。 电话来了：你们是不是做了什么改动啊，我的脚本怎么都出错了，原来任务好好的！看看，看看。 哦，报 text file busy。 还不是所有的任务都报，偶现。 网上都说，你这个是 文件有写打开，没有关闭。 我检查我的代码，都是好的啊， 我用的 <code>with open</code> 打开的， 没有关闭，怎么会呢？ 代码一行行的检查中。 明显不是我的代码的问题，肯定是你们的问题。 自己偷偷的检查代码，<a href="https://docs.python.org/2/library/subprocess.html">python文档</a> ， <code>close_fds</code> 这个参数是干什么的？ 这个是在启动这个是在 启动子进程的时候除了 0、1、2三个文件描述符会继续打开外，其他的都会关闭。 如果不加，在popen的时候，创建子进程， 集成了正在接收文件的文件描述符，若后面该文件需要执行的时候，现在的子进程没有结束，这个字写文件描述符是不会自动关闭的。因此，就出现了 <code>Text file busy</code>。 修改完之后还是有些特殊的任务还是会报 <code>Text file busy</code>， 最后，修改 网络server 使用多进程方式进行服务。 每个请求来了之后创建自己的进程，各个子进程后续打开的文件不会相互影响。 想起了不知道在哪看到的，不要在多线程中打开fork进程， 可能会出现一些莫名其妙的问题， 谨记。</p>
+
+<h1 id="问题四-性能问题">问题四： 性能问题</h1>
+
+<p>在切换使用多进程的时候就有担心新能问题，首先在多进程的情况下， ThreadingMixIn 是没有限定最大的线程数量， 但是 ForkingMixIn 限定了 max_children = 40， timeout = 300。 因此，多进程默认情况下面会限定同事处理的个数是40个。 另外一个疑问是， 创建进程的开销会比创建线程的开销大。</p>
+
+<h1 id="总结">总结</h1>
+
+<ol>
+<li>python popen 若使用 管道方式接收进行交互处理，注意处理管道文件，不要阻塞管道</li>
+<li>popen kill 不能正常工作的时候，看一下是不是启动了子进程，若是的，可以加上<code>preexec_fn=os.setsid</code>参数。</li>
+<li>popen的时候主进程若有文件处于打开状态，会被子进程继承，注意添加<code>close_fds=True</code>参数。当然，能从根本上避免是更好的。</li>
+</ol>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">jeffrey</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-05-26
+        <a href="https://gitee.com/jeffrey4note/blog-hugo-html.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/python/">python</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2018/07/26/centos-bash-%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%A8/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">CentOS Bash 命令补全</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2018/06/16/sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/">
+            <span class="next-text nav-default">sublime text3 环境设置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-06-26 15:27:40 \x2b0000 UTC',
+        title: 'python popen问题',
+        clientID: '887bf4b960bf0fb66e89',
+        clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
+        repo: 'blog-hugo-gitalk',
+        owner: 'jeffrey-sun',
+        admin: ['jeffrey-sun'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:jeffrey.coding@foxmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/jeffrey-sun" class="iconfont icon-github" title="github"></a>
+  <a href="https://blog.jeffreysun.net/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jeffrey</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "en".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script id="baidu_push">
+  (function(){
+    if (window.location.hostname === 'localhost') return;
+    var bp = document.createElement('script'); bp.async = true;
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>

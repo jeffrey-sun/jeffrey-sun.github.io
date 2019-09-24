@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDE on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/categories/ide/</link>
+    <description>Recent content in IDE on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 16 Jun 2018 21:38:57 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/categories/ide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>sublime text3 环境设置</title>
+      <link>https://blog.jeffreysun.net/post/2018/06/16/sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sat, 16 Jun 2018 21:38:57 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/06/16/sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/</guid>
+      <description>引言 今天电脑入域，强制切换用户了，之后这个笔记本很久没有开，什么环境也没有。想着最近可能还是需要在家看点东西，因此折腾一下环境。听说 VSco</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统 on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/categories/%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 系统 on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 May 2019 16:43:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/categories/%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MacOS命令行使用</title>
+      <link>https://blog.jeffreysun.net/post/2019/05/22/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 22 May 2019 16:43:43 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/05/22/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/</guid>
+      <description>命令行跳转 Ctrl+A：到行首（达到Home键的效果） Ctrl+E：到行尾（达到End键的效果） Ctrl+N：到下一行 Ctrl+P：到上一行</description>
+    </item>
+    
+    <item>
+      <title>centos7.2 安装mysql 5.7</title>
+      <link>https://blog.jeffreysun.net/post/2018/08/06/centos7.2-%E5%AE%89%E8%A3%85mysql-5.7/</link>
+      <pubDate>Mon, 06 Aug 2018 16:53:23 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/08/06/centos7.2-%E5%AE%89%E8%A3%85mysql-5.7/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;需要安装 sonarqube，使用mysql的话需要使用5.6或以上版本，我这边能找到的mysql服务基本是5.5.32就是最新的了，还能找到5.0的。因此只能自己装了。&lt;/p&gt;
+
+&lt;h1 id=&#34;尝试过程&#34;&gt;尝试过程&lt;/h1&gt;
+
+&lt;p&gt;因为机器没有外网，因此，安装起来比较麻烦。第一反应是使用RPM包安装。最后启动失败，不知道是别人的安装教程有问题还是机器的系统环境有问题。尝试过两次后放弃，打算使用源码的方式安装。
+因为只是临时使用一下，能够跑起来就可以，设置什么的就忽略了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CentOS Bash 命令补全</title>
+      <link>https://blog.jeffreysun.net/post/2018/07/26/centos-bash-%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%A8/</link>
+      <pubDate>Thu, 26 Jul 2018 11:11:29 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/07/26/centos-bash-%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%A8/</guid>
+      <description>背景 公司的服务器是最小安装的，平时上去敲命令，只有命令名称的补全，其他参数什么的补全都没有。简单的命令用着问题不是太大，复杂一点的特别是比较</description>
+    </item>
+    
+    <item>
+      <title>ubuntu16.04 容器安装ifconfig ping ip 命令</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/27/ubuntu16.04-%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85ifconfig-ping-ip-%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 27 Mar 2018 10:20:45 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/27/ubuntu16.04-%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85ifconfig-ping-ip-%E5%91%BD%E4%BB%A4/</guid>
+      <description>进入容器，发现没有ifconfig ip ping 等命令。这里做一下记录 准备 更新一下缓存 1 apt-get update ifconfig 1 apt install net-tools ping 1 apt-get install iputils-ping ip 1 apt-get install iproute2</description>
+    </item>
+    
+    <item>
+      <title>ubuntu登录提示有软件包可以更新</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/20/ubuntu%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E6%9C%89%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%96%B0/</link>
+      <pubDate>Tue, 20 Mar 2018 17:44:34 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/20/ubuntu%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E6%9C%89%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%96%B0/</guid>
+      <description>Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。 升级</description>
+    </item>
+    
+    <item>
+      <title>ubuntu16.04启动类型设置</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/13/ubuntu16.04%E5%90%AF%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Tue, 13 Mar 2018 17:05:37 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/13/ubuntu16.04%E5%90%AF%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%AE%BE%E7%BD%AE/</guid>
+      <description>说明 针对操作系统： ubuntu 16.04 LTS ubuntu桌面启动 正常安装的ubuntu桌面版是桌面启动的，不需要任何配置，需要使用命令行，新建终端即可 ubunt</description>
+    </item>
+    
+  </channel>
+</rss>

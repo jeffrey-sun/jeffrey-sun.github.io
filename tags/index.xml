@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/</link>
+    <description>Recent content in Tags on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Sep 2019 21:51:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Note</title>
+      <link>https://blog.jeffreysun.net/tags/note/</link>
+      <pubDate>Sun, 01 Sep 2019 21:51:54 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://blog.jeffreysun.net/tags/nginx/</link>
+      <pubDate>Sun, 14 Jul 2019 11:25:54 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://blog.jeffreysun.net/tags/python/</link>
+      <pubDate>Sun, 07 Jul 2019 21:40:40 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://blog.jeffreysun.net/tags/web/</link>
+      <pubDate>Sun, 07 Jul 2019 21:40:40 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tools</title>
+      <link>https://blog.jeffreysun.net/tags/tools/</link>
+      <pubDate>Tue, 02 Jul 2019 22:46:20 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://blog.jeffreysun.net/tags/go/</link>
+      <pubDate>Fri, 14 Jun 2019 23:07:49 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://blog.jeffreysun.net/tags/java/</link>
+      <pubDate>Wed, 29 May 2019 15:42:52 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mvn</title>
+      <link>https://blog.jeffreysun.net/tags/mvn/</link>
+      <pubDate>Wed, 29 May 2019 15:42:52 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/mvn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos</title>
+      <link>https://blog.jeffreysun.net/tags/centos/</link>
+      <pubDate>Sun, 26 May 2019 10:22:41 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MacOS</title>
+      <link>https://blog.jeffreysun.net/tags/macos/</link>
+      <pubDate>Wed, 22 May 2019 16:43:43 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.jeffreysun.net/tags/docker/</link>
+      <pubDate>Wed, 22 May 2019 10:34:12 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://blog.jeffreysun.net/tags/code/</link>
+      <pubDate>Mon, 20 May 2019 12:03:26 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Office</title>
+      <link>https://blog.jeffreysun.net/tags/office/</link>
+      <pubDate>Tue, 20 Nov 2018 10:13:31 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/office/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OutLook</title>
+      <link>https://blog.jeffreysun.net/tags/outlook/</link>
+      <pubDate>Tue, 20 Nov 2018 10:13:31 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/outlook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://blog.jeffreysun.net/tags/mysql/</link>
+      <pubDate>Mon, 06 Aug 2018 16:53:23 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://blog.jeffreysun.net/tags/bash/</link>
+      <pubDate>Thu, 26 Jul 2018 11:11:29 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编辑器</title>
+      <link>https://blog.jeffreysun.net/tags/%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+      <pubDate>Sat, 16 Jun 2018 21:38:57 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://blog.jeffreysun.net/tags/ubuntu/</link>
+      <pubDate>Tue, 27 Mar 2018 10:20:45 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CI</title>
+      <link>https://blog.jeffreysun.net/tags/ci/</link>
+      <pubDate>Fri, 16 Mar 2018 10:48:40 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>https://blog.jeffreysun.net/tags/jenkins/</link>
+      <pubDate>Fri, 16 Mar 2018 10:48:40 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bug</title>
+      <link>https://blog.jeffreysun.net/tags/bug/</link>
+      <pubDate>Mon, 04 Dec 2017 17:08:13 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/bug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CA</title>
+      <link>https://blog.jeffreysun.net/tags/ca/</link>
+      <pubDate>Mon, 27 Nov 2017 11:43:48 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/ca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openssl</title>
+      <link>https://blog.jeffreysun.net/tags/openssl/</link>
+      <pubDate>Mon, 27 Nov 2017 11:43:48 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/openssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spark</title>
+      <link>https://blog.jeffreysun.net/tags/spark/</link>
+      <pubDate>Tue, 21 Nov 2017 19:50:52 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://blog.jeffreysun.net/tags/git/</link>
+      <pubDate>Thu, 09 Nov 2017 19:09:20 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>storm</title>
+      <link>https://blog.jeffreysun.net/tags/storm/</link>
+      <pubDate>Thu, 09 Nov 2017 11:04:36 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/storm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo</title>
+      <link>https://blog.jeffreysun.net/tags/hexo/</link>
+      <pubDate>Tue, 10 Oct 2017 22:09:32 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://blog.jeffreysun.net/tags/js/</link>
+      <pubDate>Tue, 10 Oct 2017 22:09:32 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前端</title>
+      <link>https://blog.jeffreysun.net/tags/%E5%89%8D%E7%AB%AF/</link>
+      <pubDate>Tue, 10 Oct 2017 22:09:32 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/tags/%E5%89%8D%E7%AB%AF/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

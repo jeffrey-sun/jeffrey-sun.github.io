@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/mysql/</link>
+    <description>Recent content in mysql on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 06 Aug 2018 16:53:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>centos7.2 安装mysql 5.7</title>
+      <link>https://blog.jeffreysun.net/post/2018/08/06/centos7.2-%E5%AE%89%E8%A3%85mysql-5.7/</link>
+      <pubDate>Mon, 06 Aug 2018 16:53:23 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/08/06/centos7.2-%E5%AE%89%E8%A3%85mysql-5.7/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;需要安装 sonarqube，使用mysql的话需要使用5.6或以上版本，我这边能找到的mysql服务基本是5.5.32就是最新的了，还能找到5.0的。因此只能自己装了。&lt;/p&gt;
+
+&lt;h1 id=&#34;尝试过程&#34;&gt;尝试过程&lt;/h1&gt;
+
+&lt;p&gt;因为机器没有外网，因此，安装起来比较麻烦。第一反应是使用RPM包安装。最后启动失败，不知道是别人的安装教程有问题还是机器的系统环境有问题。尝试过两次后放弃，打算使用源码的方式安装。
+因为只是临时使用一下，能够跑起来就可以，设置什么的就忽略了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

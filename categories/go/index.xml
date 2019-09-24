@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/categories/go/</link>
+    <description>Recent content in Go on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 14 Jun 2019 23:07:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go配置读取</title>
+      <link>https://blog.jeffreysun.net/post/2019/06/14/go%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96/</link>
+      <pubDate>Fri, 14 Jun 2019 23:07:49 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/06/14/go%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96/</guid>
+      <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;写程序总是需要一定的配置或者参数的。参数的来源可以是：命令行输入、配置文件和环境变量。本文就已经了解到Go语言的几种配置或者参数方式加一说明。
+初步估计分为：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;原生工具获取&lt;/li&gt;
+&lt;li&gt;三方工具获取&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

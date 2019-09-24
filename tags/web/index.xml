@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/web/</link>
+    <description>Recent content in web on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 07 Jul 2019 21:40:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flask</title>
+      <link>https://blog.jeffreysun.net/post/2019/07/07/flask/</link>
+      <pubDate>Sun, 07 Jul 2019 21:40:40 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/07/07/flask/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+
+&lt;p&gt;最近在看 Flask的文档，官方文档&lt;a href=&#34;https://dormousehole.readthedocs.io/en/latest/index.html&#34;&gt;中文&lt;/a&gt;， &lt;a href=&#34;http://flask.pocoo.org/docs/1.0/&#34;&gt;英文文档&lt;/a&gt;。 写的都比较易懂，后面会根据使用情况，进行对应的模块详情进行补充。 教程的demo code在 &lt;a href=&#34;https://gitee.com/jeffrey4note/blog-code/tree/Python/2019/Flask&#34;&gt;blog-code项目&lt;/a&gt;中已经实现，有需求时可以回看参考一下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>https://blog.jeffreysun.net/post/2019/07/05/django/</link>
+      <pubDate>Fri, 05 Jul 2019 21:50:33 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/07/05/django/</guid>
+      <description>&lt;p&gt;当前版本（2.2）&lt;a href=&#34;https://docs.djangoproject.com/zh-hans/2.2/intro/overview/&#34;&gt;文档&lt;/a&gt;，有详细的使用说明。
+这里就不再赘述。 这里记录一下官方文档路径，方便以后查阅。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nginx 多站点域名代理配置</title>
+      <link>https://blog.jeffreysun.net/post/2019/05/20/ngnix-domin-config/</link>
+      <pubDate>Mon, 20 May 2019 12:03:26 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/05/20/ngnix-domin-config/</guid>
+      <description>&lt;p&gt;之前买了一个虚拟主机， 想着没事做个博客玩一下。 刚好最近在学习docker。 就想着使用docker来部署我的站点。 想着后面可能会将多个域名只想这台主机（也许最后只有一个域名）， 就想折腾一下。
+当前主流的WEB服务是 Apache和Nginx。 听说Ngnix，功能比较多，工作中接触比较少，就选Ngnix。 嗯，我对比了解的技术还是有很强的好奇心的（no zuo no die）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>form嵌套form导致的问题</title>
+      <link>https://blog.jeffreysun.net/post/2017/10/17/form%E5%B5%8C%E5%A5%97form%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 17 Oct 2017 09:45:00 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2017/10/17/form%E5%B5%8C%E5%A5%97form%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;h1 id=&#34;故事背景&#34;&gt;故事背景&lt;/h1&gt;
+
+&lt;p&gt;在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过&lt;code&gt;$(formName).data(&amp;quot;bootstrapValidator&amp;quot;)&lt;/code&gt;获取到对象，进行相应的验证操作。但是在重新执行&lt;code&gt;render&lt;/code&gt;函数进行渲染的时候，就会报错。于是纠结很久。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

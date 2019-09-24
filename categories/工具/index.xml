@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 14 Jul 2019 11:25:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx配置</title>
+      <link>https://blog.jeffreysun.net/post/2019/07/14/nginx%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 14 Jul 2019 11:25:54 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/07/14/nginx%E9%85%8D%E7%BD%AE/</guid>
+      <description>简介 Nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器；同时也是一个IMAP、POP3、SMTP代理服务器；Nginx可</description>
+    </item>
+    
+    <item>
+      <title>Flask</title>
+      <link>https://blog.jeffreysun.net/post/2019/07/07/flask/</link>
+      <pubDate>Sun, 07 Jul 2019 21:40:40 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/07/07/flask/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+
+&lt;p&gt;最近在看 Flask的文档，官方文档&lt;a href=&#34;https://dormousehole.readthedocs.io/en/latest/index.html&#34;&gt;中文&lt;/a&gt;， &lt;a href=&#34;http://flask.pocoo.org/docs/1.0/&#34;&gt;英文文档&lt;/a&gt;。 写的都比较易懂，后面会根据使用情况，进行对应的模块详情进行补充。 教程的demo code在 &lt;a href=&#34;https://gitee.com/jeffrey4note/blog-code/tree/Python/2019/Flask&#34;&gt;blog-code项目&lt;/a&gt;中已经实现，有需求时可以回看参考一下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Django</title>
+      <link>https://blog.jeffreysun.net/post/2019/07/05/django/</link>
+      <pubDate>Fri, 05 Jul 2019 21:50:33 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/07/05/django/</guid>
+      <description>&lt;p&gt;当前版本（2.2）&lt;a href=&#34;https://docs.djangoproject.com/zh-hans/2.2/intro/overview/&#34;&gt;文档&lt;/a&gt;，有详细的使用说明。
+这里就不再赘述。 这里记录一下官方文档路径，方便以后查阅。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://blog.jeffreysun.net/post/2019/07/02/rabbitmq/</link>
+      <pubDate>Tue, 02 Jul 2019 22:46:20 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/07/02/rabbitmq/</guid>
+      <description>&lt;p&gt;记录 RabbitMQ 使用。 大致分为一下几个部分：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;docker运行&lt;/li&gt;
+&lt;li&gt;使用简介&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>office outlook 2016 迁移默认数据位置</title>
+      <link>https://blog.jeffreysun.net/post/2018/11/20/office-outlook-2016-%E8%BF%81%E7%A7%BB%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/</link>
+      <pubDate>Tue, 20 Nov 2018 10:13:31 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/11/20/office-outlook-2016-%E8%BF%81%E7%A7%BB%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;最开始使用outlook，由于C盘占用越来越大，后面使用 Foxmail作为邮件接收终端。近期因为公司邮件服务升级说Foxmail不支持升级后的协议，因此就开始查找迁移数据位置的办法。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>sublime text3 环境设置</title>
+      <link>https://blog.jeffreysun.net/post/2018/06/16/sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sat, 16 Jun 2018 21:38:57 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/06/16/sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
+
+&lt;p&gt;今天电脑入域，强制切换用户了，之后这个笔记本很久没有开，什么环境也没有。想着最近可能还是需要在家看点东西，因此折腾一下环境。听说 VScode不错，弄了半天，还是不怎么顺心。因此还是打算折腾一下 稍微熟悉点的 sublime text（机器比较老，担心IDE跑不动，特别&lt;code&gt;jetbrains&lt;/code&gt; 家的）。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>jenkins单元测试</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/16/jenkins%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Fri, 16 Mar 2018 10:48:40 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/16/jenkins%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;h2 id=&#34;jenkins插件安装&#34;&gt;jenkins插件安装&lt;/h2&gt;
+
+&lt;p&gt;为了能够从xml中获取Unit test 的结果，可以安装 Publish Junit test result report 组件。使用时需要制定xml文件位置， 可以使用&lt;code&gt;*&lt;/code&gt;进行匹配&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>jenkins安装</title>
+      <link>https://blog.jeffreysun.net/post/2018/03/12/jenkins%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 12 Mar 2018 17:51:52 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2018/03/12/jenkins%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;h2 id=&#34;环境介绍&#34;&gt;环境介绍：&lt;/h2&gt;
+
+&lt;p&gt;目标安装环境：Ubuntu 16.04.3 LTS
+JDK：1.8.0_151&lt;/p&gt;
+
+&lt;h2 id=&#34;安装方式&#34;&gt;安装方式&lt;/h2&gt;
+
+&lt;h3 id=&#34;最简安装-网络畅通情况下&#34;&gt;最简安装（网络畅通情况下）&lt;/h3&gt;
+
+&lt;h4 id=&#34;安装软件&#34;&gt;安装软件&lt;/h4&gt;
+
+&lt;h5 id=&#34;执行以下命令&#34;&gt;执行以下命令：&lt;/h5&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo apt-key add -
+sudo sh -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;echo deb http://pkg.jenkins.io/debian-stable binary/ &amp;gt; /etc/apt/sources.list.d/jenkins.list&amp;#39;&lt;/span&gt;
+sudo apt-get update
+sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>git仓库删除所有的历史提交</title>
+      <link>https://blog.jeffreysun.net/post/2017/11/09/git%E4%BB%93%E5%BA%93%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Thu, 09 Nov 2017 19:09:20 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2017/11/09/git%E4%BB%93%E5%BA%93%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;在写博客的时候，没有注意，把公司的邮箱用户名什么的都弄在了提交记录里面，虽然也没有什么， 就是看着不爽了。 于是就想着折腾一把。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git子模块的使用方法</title>
+      <link>https://blog.jeffreysun.net/post/2017/11/08/git%E5%AD%90%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Wed, 08 Nov 2017 20:52:14 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2017/11/08/git%E5%AD%90%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;感觉自己比较啰嗦，什么时候总想交代一下缘由。
+故事的的开始是，我在使用 hexo 的时候， 想用git 做一下版本管理。为了主题能够方便升级（也许我以后一直不会升级的）， 直接clone了原始库。做完自己的配置后，回不到原始库就推到了&lt;a href=&#34;gitee.com&#34;&gt;码云&lt;/a&gt; 上了。为什么要退到码云上，是因为它可以建免费的私有项目，我又没有自己的网络主机。之后问题就出来了，我有两个库，一个是文章的，一个是主题加主题配置的，怎么管理。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>git中文乱码</title>
+      <link>https://blog.jeffreysun.net/post/2017/11/08/git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+      <pubDate>Wed, 08 Nov 2017 20:08:21 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2017/11/08/git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;git 的中文乱码问题一直困扰着我，当然新本的git客户端（2.15.0）安装完后，提交日志什么的基本没有什么乱码问题。只是在显示中文路径名的时候会有问题。我本机的表现为显示一串数字。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>idea内存溢出</title>
+      <link>https://blog.jeffreysun.net/post/2017/10/27/idea%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA/</link>
+      <pubDate>Fri, 27 Oct 2017 11:07:00 +0000</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2017/10/27/idea%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA/</guid>
+      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;昨天晚上在开看网页的时候，突然弹出一个提示框说：IDEA的内存溢出了，要不要关闭程序啊。看了一眼物理内存，发现还有一些啊，虽然我开的网页比较多，16G的内存用了85%，这样的情况也不至于报内存溢出的。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

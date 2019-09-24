@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on Jeffrey&#39;s blog</title>
+    <link>https://blog.jeffreysun.net/tags/tools/</link>
+    <description>Recent content in tools on Jeffrey&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 02 Jul 2019 22:46:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.jeffreysun.net/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://blog.jeffreysun.net/post/2019/07/02/rabbitmq/</link>
+      <pubDate>Tue, 02 Jul 2019 22:46:20 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/07/02/rabbitmq/</guid>
+      <description>&lt;p&gt;记录 RabbitMQ 使用。 大致分为一下几个部分：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;docker运行&lt;/li&gt;
+&lt;li&gt;使用简介&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
