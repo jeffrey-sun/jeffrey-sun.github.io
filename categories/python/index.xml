@@ -21,12 +21,33 @@
     </item>
     
     <item>
+      <title>Python字符串格式化</title>
+      <link>https://blog.jeffreysun.net/post/2019/05/29/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
+      <pubDate>Wed, 29 May 2019 15:43:59 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/05/29/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+
+&lt;p&gt;Pyton用了一段时间了，对字符串的格式化最多用的就是&lt;code&gt;&amp;quot;%s&amp;quot; % var&lt;/code&gt;，最多，多加几个参数，或者加个&lt;code&gt;str()&lt;/code&gt;处理一下。一直美誉深究，能用就好。
+前段时间刚好做了一个测试，想把字符串安装特定的格式输出，这样看过程更加方便点。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>初始化Python3环境</title>
+      <link>https://blog.jeffreysun.net/post/2019/05/26/%E5%88%9D%E5%A7%8B%E5%8C%96python3%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Sun, 26 May 2019 10:22:41 +0800</pubDate>
+      
+      <guid>https://blog.jeffreysun.net/post/2019/05/26/%E5%88%9D%E5%A7%8B%E5%8C%96python3%E7%8E%AF%E5%A2%83/</guid>
+      <description>背景 最近之前的网络主机到期了，换了一个服务商。想写点python的工具，内置的python版本是2.7。 因此在这里记录过程 环境说明 操作系统：</description>
+    </item>
+    
+    <item>
       <title>python popen问题</title>
       <link>https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 26 Jun 2018 15:27:40 +0000</pubDate>
       
       <guid>https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 
 &lt;p&gt;一次艰辛的python代码调试。 poen函数，先后遇到 &lt;code&gt;子进程kill不掉&lt;/code&gt;、 &lt;code&gt;执行任务text file busy&lt;/code&gt;（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。&lt;/p&gt;</description>
     </item>

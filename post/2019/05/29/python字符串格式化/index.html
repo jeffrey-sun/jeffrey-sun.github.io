@@ -140,6 +140,7 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
         <span class="post-time"> 2019-05-29 </span>
         <div class="post-category">
             <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
+            <a href="/categories/python/"> Python </a>
             </div>
           <span class="more-meta"> 约 2044 字 </span>
           <span class="more-meta"> 预计阅读 5 分钟 </span>
@@ -302,19 +303,19 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;PYTHON&#34;</span>
- 
+
 <span class="s2">&#34;{0:30}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="c1"># out: &#39;PYTHON                        &#39;</span>
- 
+
 <span class="s2">&#34;{0:&gt;30}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="c1"># out: &#39;                        PYTHON&#39;</span>
- 
+
 <span class="s2">&#34;{0:*^30}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="c1"># out: &#39;************PYTHON************&#39;</span>
- 
+
 <span class="s2">&#34;{0:-^30}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="c1"># out: &#39;------------PYTHON------------&#39;</span>
- 
+
 <span class="s2">&#34;{0:3}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="c1"># out: &#39;PYTHON&#39;</span>
 
@@ -322,20 +323,20 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 
 <span class="s2">&#34;{0:-^20,}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span>
 <span class="c1"># out: &#39;---1,234,567,890----&#39;</span>
- 
+
 <span class="s2">&#34;{0:-^20}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1234567890</span><span class="p">)</span> <span class="c1">#对比输出</span>
 <span class="c1"># out: &#39;-----1234567890-----&#39;</span>
- 
+
 <span class="s2">&#34;{0:-^20,}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12345.67890</span><span class="p">)</span>
 <span class="c1"># out: &#39;----12,345.6789-----&#39;</span>
 
 
 <span class="s2">&#34;{0:.2f}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12345.67890</span><span class="p">)</span>
 <span class="c1"># out: &#39;12345.68&#39;</span>
- 
+
 <span class="s2">&#34;{0:H^20.3f}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">12345.67890</span><span class="p">)</span>
 <span class="c1"># out: &#39;HHHHH12345.679HHHHHH&#39;</span>
- 
+
 <span class="s2">&#34;{0:.4}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&#34;PYTHON&#34;</span><span class="p">)</span>
 <span class="c1"># out: &#39;PYTH&#39;</span>
 
@@ -346,7 +347,7 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 
 <span class="s2">&#34;{0:e},{0:E},{0:f},{0:%}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
 <span class="c1"># out: &#39;3.140000e+00,3.140000E+00,3.140000,314.000000%&#39;</span>
- 
+
 <span class="s2">&#34;{0:.2e},{0:.2E},{0:.2f},{0:.2%}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
 <span class="c1"># out: &#39;3.14e+00,3.14E+00,3.14,314.00%&#39;</span></code></pre></td></tr></table>
 </div>

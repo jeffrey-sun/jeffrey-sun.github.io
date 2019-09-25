@@ -10,56 +10,56 @@
   
   <url>
     <loc>https://blog.jeffreysun.net/categories/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.jeffreysun.net/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.jeffreysun.net/tags/note/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.jeffreysun.net/categories/note/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.jeffreysun.net/post/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.jeffreysun.net/categories/shell/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.jeffreysun.net/post/2019/09/01/shell%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.jeffreysun.net/tags/</loc>
-    <lastmod>2019-09-25T00:02:17+08:00</lastmod>
+    <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -206,13 +206,6 @@
   
   <url>
     <loc>https://blog.jeffreysun.net/tags/centos/</loc>
-    <lastmod>2019-06-08T18:07:48+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.jeffreysun.net/categories/pythn/</loc>
     <lastmod>2019-06-08T18:07:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

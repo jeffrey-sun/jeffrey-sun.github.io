@@ -201,7 +201,7 @@
       <pubDate>Tue, 26 Jun 2018 15:27:40 +0000</pubDate>
       
       <guid>https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 
 &lt;p&gt;一次艰辛的python代码调试。 poen函数，先后遇到 &lt;code&gt;子进程kill不掉&lt;/code&gt;、 &lt;code&gt;执行任务text file busy&lt;/code&gt;（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。&lt;/p&gt;</description>
     </item>
