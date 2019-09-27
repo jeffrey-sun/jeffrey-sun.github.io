@@ -23,14 +23,14 @@
   </url>
   
   <url>
-    <loc>https://blog.jeffreysun.net/tags/note/</loc>
+    <loc>https://blog.jeffreysun.net/categories/note/</loc>
     <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://blog.jeffreysun.net/categories/note/</loc>
+    <loc>https://blog.jeffreysun.net/tags/note/</loc>
     <lastmod>2019-09-25T00:07:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
