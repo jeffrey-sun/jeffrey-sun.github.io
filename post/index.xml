@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Jeffrey&#39;s blog</title>
@@ -36,7 +36,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2019/07/07/flask/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
-
 &lt;p&gt;最近在看 Flask的文档，官方文档&lt;a href=&#34;https://dormousehole.readthedocs.io/en/latest/index.html&#34;&gt;中文&lt;/a&gt;， &lt;a href=&#34;http://flask.pocoo.org/docs/1.0/&#34;&gt;英文文档&lt;/a&gt;。 写的都比较易懂，后面会根据使用情况，进行对应的模块详情进行补充。 教程的demo code在 &lt;a href=&#34;https://gitee.com/jeffrey4note/blog-code/tree/Python/2019/Flask&#34;&gt;blog-code项目&lt;/a&gt;中已经实现，有需求时可以回看参考一下。&lt;/p&gt;</description>
     </item>
     
@@ -57,7 +56,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2019/07/02/rabbitmq/</guid>
       <description>&lt;p&gt;记录 RabbitMQ 使用。 大致分为一下几个部分：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;docker运行&lt;/li&gt;
 &lt;li&gt;使用简介&lt;/li&gt;
@@ -80,10 +78,8 @@
       
       <guid>https://blog.jeffreysun.net/post/2019/06/14/go%E9%85%8D%E7%BD%AE%E8%AF%BB%E5%8F%96/</guid>
       <description>&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
-
 &lt;p&gt;写程序总是需要一定的配置或者参数的。参数的来源可以是：命令行输入、配置文件和环境变量。本文就已经了解到Go语言的几种配置或者参数方式加一说明。
 初步估计分为：&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;原生工具获取&lt;/li&gt;
 &lt;li&gt;三方工具获取&lt;/li&gt;
@@ -97,7 +93,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2019/05/29/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
-
 &lt;p&gt;Pyton用了一段时间了，对字符串的格式化最多用的就是&lt;code&gt;&amp;quot;%s&amp;quot; % var&lt;/code&gt;，最多，多加几个参数，或者加个&lt;code&gt;str()&lt;/code&gt;处理一下。一直美誉深究，能用就好。
 前段时间刚好做了一个测试，想把字符串安装特定的格式输出，这样看过程更加方便点。&lt;/p&gt;</description>
     </item>
@@ -109,7 +104,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2019/05/29/maven-settings%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
-
 &lt;p&gt;最近在折腾maven环境配置，在网上搜了一些资料，随便做一下记录&lt;/p&gt;</description>
     </item>
     
@@ -157,7 +151,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/11/20/office-outlook-2016-%E8%BF%81%E7%A7%BB%E9%BB%98%E8%AE%A4%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;最开始使用outlook，由于C盘占用越来越大，后面使用 Foxmail作为邮件接收终端。近期因为公司邮件服务升级说Foxmail不支持升级后的协议，因此就开始查找迁移数据位置的办法。&lt;/p&gt;</description>
     </item>
     
@@ -168,11 +161,8 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/08/06/centos7.2-%E5%AE%89%E8%A3%85mysql-5.7/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;需要安装 sonarqube，使用mysql的话需要使用5.6或以上版本，我这边能找到的mysql服务基本是5.5.32就是最新的了，还能找到5.0的。因此只能自己装了。&lt;/p&gt;
-
 &lt;h1 id=&#34;尝试过程&#34;&gt;尝试过程&lt;/h1&gt;
-
 &lt;p&gt;因为机器没有外网，因此，安装起来比较麻烦。第一反应是使用RPM包安装。最后启动失败，不知道是别人的安装教程有问题还是机器的系统环境有问题。尝试过两次后放弃，打算使用源码的方式安装。
 因为只是临时使用一下，能够跑起来就可以，设置什么的就忽略了。&lt;/p&gt;</description>
     </item>
@@ -193,7 +183,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/06/26/python-popen%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
-
 &lt;p&gt;一次艰辛的python代码调试。 poen函数，先后遇到 &lt;code&gt;子进程kill不掉&lt;/code&gt;、 &lt;code&gt;执行任务text file busy&lt;/code&gt;（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。&lt;/p&gt;</description>
     </item>
     
@@ -204,7 +193,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/06/16/sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/</guid>
       <description>&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
-
 &lt;p&gt;今天电脑入域，强制切换用户了，之后这个笔记本很久没有开，什么环境也没有。想着最近可能还是需要在家看点东西，因此折腾一下环境。听说 VScode不错，弄了半天，还是不怎么顺心。因此还是打算折腾一下 稍微熟悉点的 sublime text（机器比较老，担心IDE跑不动，特别&lt;code&gt;jetbrains&lt;/code&gt; 家的）。&lt;/p&gt;</description>
     </item>
     
@@ -215,7 +203,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/04/19/docker-%E5%AE%B9%E5%99%A8%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4/</guid>
       <description>&lt;h2 id=&#34;引言&#34;&gt;引言&lt;/h2&gt;
-
 &lt;p&gt;使用docker 过程中经常直接重启了docker服务，导致正在运行的容器异常退出，删除的时候会报错。在这里总结一下遇到的无法删除容器的教训。&lt;/p&gt;</description>
     </item>
     
@@ -226,9 +213,7 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/04/18/docker%E5%AE%B9%E5%99%A8%E6%97%B6%E5%8C%BA%E4%BF%AE%E6%94%B9/</guid>
       <description>&lt;h1 id=&#34;docker容器修改时区&#34;&gt;docker容器修改时区&lt;/h1&gt;
-
 &lt;p&gt;在容器中，执行&lt;code&gt;date&lt;/code&gt;显示的时间可能出现八小时的时间差，这是因为docker默认使用时区为0。&lt;/p&gt;
-
 &lt;p&gt;在&lt;code&gt;/usr/share/zoneinfo&lt;/code&gt;目录下有大量的时区文件，根据自己的需要把自己需要的时区信息拷贝到&lt;code&gt;/etc/&lt;/code&gt;目录下，重命名为 &lt;code&gt;localtime&lt;/code&gt;就可以。这里我一般使用 &lt;code&gt;cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/code&gt; 。&lt;/p&gt;</description>
     </item>
     
@@ -239,7 +224,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/03/27/docker%E5%BC%80%E5%90%AF%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/</guid>
       <description>&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
-
 &lt;p&gt;Docker采用&lt;code&gt;C/S&lt;/code&gt;架构，包括客户端和服务端。Docker守护进程（Daemon）作为服务端接受来自客户端的请求，并处理这些请求（ 创建、 运行、 分发容器）。Docker从 0.5.2 之后使用本地Unix套接字机制强制代替了原先绑定在127.0.0.1 上的套接字，以加强服务端的防护。用户任然可以使用HTTP提供REST API 访问。建议使用安全机制，确保只有可行的网络或VPN，或证书保护机制（例如受保护的stunnel和ssl认证）下的访问可以进行。
 这里简单说明开启 REST API的过程。&lt;/p&gt;</description>
     </item>
@@ -260,7 +244,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/03/26/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/</guid>
       <description>&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
-
 &lt;p&gt;docker 是一个非常方便的工具，在在使用过程中，需要使用一些网络相关的信息。找了一些资料，在这里做点笔记。&lt;/p&gt;</description>
     </item>
     
@@ -279,7 +262,7 @@
       <pubDate>Tue, 20 Mar 2018 17:44:34 +0000</pubDate>
       
       <guid>https://blog.jeffreysun.net/post/2018/03/20/ubuntu%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E6%9C%89%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%96%B0/</guid>
-      <description>Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。 升级</description>
+      <description>Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 9 10 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。</description>
     </item>
     
     <item>
@@ -289,7 +272,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/03/16/jenkins%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>&lt;h2 id=&#34;jenkins插件安装&#34;&gt;jenkins插件安装&lt;/h2&gt;
-
 &lt;p&gt;为了能够从xml中获取Unit test 的结果，可以安装 Publish Junit test result report 组件。使用时需要制定xml文件位置， 可以使用&lt;code&gt;*&lt;/code&gt;进行匹配&lt;/p&gt;</description>
     </item>
     
@@ -321,20 +303,15 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/03/12/jenkins%E5%AE%89%E8%A3%85/</guid>
       <description>&lt;h2 id=&#34;环境介绍&#34;&gt;环境介绍：&lt;/h2&gt;
-
 &lt;p&gt;目标安装环境：Ubuntu 16.04.3 LTS
 JDK：1.8.0_151&lt;/p&gt;
-
 &lt;h2 id=&#34;安装方式&#34;&gt;安装方式&lt;/h2&gt;
-
-&lt;h3 id=&#34;最简安装-网络畅通情况下&#34;&gt;最简安装（网络畅通情况下）&lt;/h3&gt;
-
+&lt;h3 id=&#34;最简安装网络畅通情况下&#34;&gt;最简安装（网络畅通情况下）&lt;/h3&gt;
 &lt;h4 id=&#34;安装软件&#34;&gt;安装软件&lt;/h4&gt;
-
 &lt;h5 id=&#34;执行以下命令&#34;&gt;执行以下命令：&lt;/h5&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
@@ -343,7 +320,8 @@ JDK：1.8.0_151&lt;/p&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo apt-key add -
 sudo sh -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;echo deb http://pkg.jenkins.io/debian-stable binary/ &amp;gt; /etc/apt/sources.list.d/jenkins.list&amp;#39;&lt;/span&gt;
 sudo apt-get update
-sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+sudo apt-get install jenkins
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -357,14 +335,15 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       <description>&lt;h1 id=&#34;异常现象&#34;&gt;异常现象&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;java.lang.UnsupportedOperationException: null
     at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45]
-    at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+    at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>
@@ -376,9 +355,7 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/11/27/openssl%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;在工作中，遇到一个要写agent的场景，因为agent具有一定的执行能，且由控制端发起，因此就需要考虑安全问题。因为代码需要部署到客户机器上，简单使用对称加密不安全，主要是担心密钥不安全。因此选用了 SSL/TLS 协议。 使用的python有库可以选用，因此，最大的工作量还是 证书的生成。&lt;/p&gt;
-
 &lt;p&gt;找到 一个比较全的资料&lt;a href=&#34;http://blog.csdn.net/howeverpf/article/details/21622545&#34;&gt;如何使用OpenSSL工具生成根证书与应用证书&lt;/a&gt;，在此留档，以供参考。&lt;/p&gt;</description>
     </item>
     
@@ -398,7 +375,6 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/11/16/java%E7%9A%84try-catch-finally-%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;在java编程过程中，经常会使用 try catch语句来处理异常，对打开了资源的文件的，要使用finally进行关闭。
 正常的执行顺序是 try块，如果没有异常执行finally块，有异常跳转到catch块，最后执行finally块。 刚好遇到一个try catch 带有finally的语句，还使用了return。于是，就想到了语句执行情况的问题。&lt;/p&gt;</description>
     </item>
@@ -410,7 +386,6 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/11/09/git%E4%BB%93%E5%BA%93%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;在写博客的时候，没有注意，把公司的邮箱用户名什么的都弄在了提交记录里面，虽然也没有什么， 就是看着不爽了。 于是就想着折腾一把。&lt;/p&gt;</description>
     </item>
     
@@ -421,7 +396,6 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/11/09/jstorm%E4%B8%ADspout%E7%BB%84%E4%BB%B6%E5%90%9E%E5%90%90%E9%87%8F%E9%99%8D%E4%BD%8E/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;正在负责运维的jstorm集群因为CPU消耗过高，又没有机器投入， 只能想办法优化Jstorm的逻辑。 大家都说序列化\反序列化比较消耗资源， 就想着批量性的序列化。 不懂背景的胡乱修改前人的代码就是一个深不见底的坑。&lt;/p&gt;</description>
     </item>
     
@@ -432,7 +406,6 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/11/08/git%E5%AD%90%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;感觉自己比较啰嗦，什么时候总想交代一下缘由。
 故事的的开始是，我在使用 hexo 的时候， 想用git 做一下版本管理。为了主题能够方便升级（也许我以后一直不会升级的）， 直接clone了原始库。做完自己的配置后，回不到原始库就推到了&lt;a href=&#34;gitee.com&#34;&gt;码云&lt;/a&gt; 上了。为什么要退到码云上，是因为它可以建免费的私有项目，我又没有自己的网络主机。之后问题就出来了，我有两个库，一个是文章的，一个是主题加主题配置的，怎么管理。&lt;/p&gt;</description>
     </item>
@@ -444,7 +417,6 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/11/08/git%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;git 的中文乱码问题一直困扰着我，当然新本的git客户端（2.15.0）安装完后，提交日志什么的基本没有什么乱码问题。只是在显示中文路径名的时候会有问题。我本机的表现为显示一串数字。&lt;/p&gt;</description>
     </item>
     
@@ -455,7 +427,6 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/10/27/idea%E5%86%85%E5%AD%98%E6%BA%A2%E5%87%BA/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;昨天晚上在开看网页的时候，突然弹出一个提示框说：IDEA的内存溢出了，要不要关闭程序啊。看了一眼物理内存，发现还有一些啊，虽然我开的网页比较多，16G的内存用了85%，这样的情况也不至于报内存溢出的。&lt;/p&gt;</description>
     </item>
     
@@ -466,7 +437,6 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/10/17/form%E5%B5%8C%E5%A5%97form%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;h1 id=&#34;故事背景&#34;&gt;故事背景&lt;/h1&gt;
-
 &lt;p&gt;在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过&lt;code&gt;$(formName).data(&amp;quot;bootstrapValidator&amp;quot;)&lt;/code&gt;获取到对象，进行相应的验证操作。但是在重新执行&lt;code&gt;render&lt;/code&gt;函数进行渲染的时候，就会报错。于是纠结很久。&lt;/p&gt;</description>
     </item>
     
@@ -486,9 +456,7 @@ sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/
       
       <guid>https://blog.jeffreysun.net/post/2017/10/10/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>&lt;h2 id=&#34;hexo-安装使用&#34;&gt;hexo 安装使用&lt;/h2&gt;
-
 &lt;h3 id=&#34;0-需要环境&#34;&gt;0. 需要环境&lt;/h3&gt;
-
 &lt;p&gt;hexo 安装需要nodejs环境，当前实验使用的是&lt;code&gt;V6.11.4 x64&lt;/code&gt; 版本
 在官网有详细的&lt;a href=&#34;https://hexo.io/zh-cn/docs/&#34;&gt;中文文档&lt;/a&gt;,这里仅仅是留作参考&lt;/p&gt;</description>
     </item>

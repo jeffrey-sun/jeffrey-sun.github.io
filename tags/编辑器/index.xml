@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编辑器 on Jeffrey&#39;s blog</title>
@@ -18,7 +18,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/06/16/sublime-text3-%E7%8E%AF%E5%A2%83%E8%AE%BE%E7%BD%AE/</guid>
       <description>&lt;h1 id=&#34;引言&#34;&gt;引言&lt;/h1&gt;
-
 &lt;p&gt;今天电脑入域，强制切换用户了，之后这个笔记本很久没有开，什么环境也没有。想着最近可能还是需要在家看点东西，因此折腾一下环境。听说 VScode不错，弄了半天，还是不怎么顺心。因此还是打算折腾一下 稍微熟悉点的 sublime text（机器比较老，担心IDE跑不动，特别&lt;code&gt;jetbrains&lt;/code&gt; 家的）。&lt;/p&gt;</description>
     </item>
     

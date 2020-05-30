@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Jeffrey" /><meta name="description" content="异常现象 1 2 3  java.lang.UnsupportedOperationException: null at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45] at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]  " /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Jeffrey" /><meta name="description" content="异常现象 1 2 3  java.lang.UnsupportedOperationException: null at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45] at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]   " /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2017/12/04/%E8%A7%A3%E5%86%B3-unsupportedoperationexception-%E5%BC%82%E5%B8%B8/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -51,11 +52,12 @@ java.lang.UnsupportedOperationException: null
     at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45]
     at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]
 
+
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2017/12/04/%E8%A7%A3%E5%86%B3-unsupportedoperationexception-%E5%BC%82%E5%B8%B8/" />
 <meta property="article:published_time" content="2017-12-04T17:08:13+00:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2017-12-04T17:08:13+00:00" />
 <meta itemprop="name" content="解决 UnsupportedOperationException 异常">
 <meta itemprop="description" content="异常现象
 
@@ -69,17 +71,15 @@ java.lang.UnsupportedOperationException: null
     at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45]
     at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]
 
+
 ">
-
-
 <meta itemprop="datePublished" content="2017-12-04T17:08:13&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
+<meta itemprop="dateModified" content="2017-12-04T17:08:13&#43;00:00" />
 <meta itemprop="wordCount" content="421">
 
 
 
-<meta itemprop="keywords" content="java,bug," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="java,bug," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="解决 UnsupportedOperationException 异常"/>
 <meta name="twitter:description" content="异常现象
 
@@ -92,6 +92,7 @@ java.lang.UnsupportedOperationException: null
 java.lang.UnsupportedOperationException: null
     at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45]
     at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]
+
 
 "/>
 
@@ -177,52 +178,51 @@ java.lang.UnsupportedOperationException: null
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#异常现象">异常现象</a></li>
-<li><a href="#解决">解决</a></li>
-</ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2017-12-04T17:08:13" title="December 4, 2017">December 4, 2017</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h1 id="异常现象">异常现象</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-plain" data-lang="plain">java.lang.UnsupportedOperationException: null
     at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45]
-    at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]</code></pre></td></tr></table>
+    at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="解决">解决</h1>
-
+</div><h1 id="解决">解决</h1>
 <p>因为本处使用了以下代码：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">temp</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
-<span class="n">temp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">1</span><span class="p">);</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arr</span><span class="o">);</span>
+<span class="n">temp</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>使用 Arrays.asList()转换的List不支持add() 和 remove()方法，这是由于从Arrays.asList()返回的是返回java.util.Arrays$ArrayList，而不是ArrayList。Arrays$ArrayList和ArrayList都是继承AbstractList，add() 和remove()等方法在AbstractList中默认throw UnsupportedOperationException而不做任何操作。ArrayList重写这些方法对List进行操作，而Arrays$ArrayList却没有重写add()和 remove()等方法，所以对从Arrays.asList()转化过来的List进行add()和remove()会出现UnsupportedOperationException异常。</p>
-
+</div><p>使用 Arrays.asList()转换的List不支持add() 和 remove()方法，这是由于从Arrays.asList()返回的是返回java.util.Arrays$ArrayList，而不是ArrayList。Arrays$ArrayList和ArrayList都是继承AbstractList，add() 和remove()等方法在AbstractList中默认throw UnsupportedOperationException而不做任何操作。ArrayList重写这些方法对List进行操作，而Arrays$ArrayList却没有重写add()和 remove()等方法，所以对从Arrays.asList()转化过来的List进行add()和remove()会出现UnsupportedOperationException异常。</p>
 <p>解决办法 ：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">arr</span><span class="p">));</span>
-<span class="n">temp</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">1</span><span class="p">);</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">temp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">arr</span><span class="o">));</span>
+<span class="n">temp</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">1</span><span class="o">);</span>
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -235,8 +235,8 @@ java.lang.UnsupportedOperationException: null
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2017-12-04
+        
     </span>
   </p>
   
@@ -267,7 +267,7 @@ java.lang.UnsupportedOperationException: null
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2017-12-04 17:08:13 \x2b0000 UTC',
+        id: '2017-12-04 17:08:13 \u002b0000 UTC',
         title: '解决 UnsupportedOperationException 异常',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -313,7 +313,7 @@ java.lang.UnsupportedOperationException: null
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -337,7 +337,10 @@ java.lang.UnsupportedOperationException: null
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

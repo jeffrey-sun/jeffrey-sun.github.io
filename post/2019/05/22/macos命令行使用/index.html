@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2019/05/22/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -43,19 +44,16 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2019/05/22/macos%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8/" />
 <meta property="article:published_time" content="2019-05-22T16:43:43+08:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2019-05-22T10:34:12+08:00" />
 <meta itemprop="name" content="MacOS命令行使用">
 <meta itemprop="description" content="命令行跳转 Ctrl&#43;A：到行首（达到Home键的效果） Ctrl&#43;E：到行尾（达到End键的效果） Ctrl&#43;N：到下一行 Ctrl&#43;P：到上一行">
-
-
 <meta itemprop="datePublished" content="2019-05-22T16:43:43&#43;08:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-22T10:34:12&#43;08:00" />
 <meta itemprop="wordCount" content="141">
 
 
 
-<meta itemprop="keywords" content="MacOS," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="MacOS," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MacOS命令行使用"/>
 <meta name="twitter:description" content="命令行跳转 Ctrl&#43;A：到行首（达到Home键的效果） Ctrl&#43;E：到行尾（达到End键的效果） Ctrl&#43;N：到下一行 Ctrl&#43;P：到上一行"/>
 
@@ -141,37 +139,28 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#命令行跳转">命令行跳转</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#命令行跳转">命令行跳转</a></li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-22T10:34:12" title="May 22, 2019">May 22, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
-      
-
-<h2 id="命令行跳转">命令行跳转</h2>
-
+      <h2 id="命令行跳转">命令行跳转</h2>
 <blockquote>
 <p>Ctrl+A：到行首（达到Home键的效果）</p>
-
 <p>Ctrl+E：到行尾（达到End键的效果）</p>
-
 <p>Ctrl+N：到下一行</p>
-
 <p>Ctrl+P：到上一行</p>
-
 <p>Ctrl+K：从光标处开始删除，直到行尾</p>
-
 <p>fn键+左方向键是HOME</p>
-
 <p>fn键+右方向键是END</p>
-
 <p>fn+上方向键是page up</p>
-
 <p>fn+下方向键是page down</p>
 </blockquote>
 
@@ -185,8 +174,8 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2019-05-22
+        
     </span>
   </p>
   
@@ -216,7 +205,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-05-22 16:43:43 \x2b0800 CST',
+        id: '2019-05-22 16:43:43 \u002b0800 CST',
         title: 'MacOS命令行使用',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -262,7 +251,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -286,7 +275,10 @@
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

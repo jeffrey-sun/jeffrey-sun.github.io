@@ -25,7 +25,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2017/11/27/openssl%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/" />
@@ -36,41 +36,33 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="openssl自签名证书" />
 <meta property="og:description" content="背景
-
 在工作中，遇到一个要写agent的场景，因为agent具有一定的执行能，且由控制端发起，因此就需要考虑安全问题。因为代码需要部署到客户机器上，简单使用对称加密不安全，主要是担心密钥不安全。因此选用了 SSL/TLS 协议。 使用的python有库可以选用，因此，最大的工作量还是 证书的生成。
-
 找到 一个比较全的资料如何使用OpenSSL工具生成根证书与应用证书，在此留档，以供参考。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2017/11/27/openssl%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6/" />
 <meta property="article:published_time" content="2017-11-27T11:43:48+00:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2019-05-22T10:34:12+08:00" />
 <meta itemprop="name" content="openssl自签名证书">
 <meta itemprop="description" content="背景
-
 在工作中，遇到一个要写agent的场景，因为agent具有一定的执行能，且由控制端发起，因此就需要考虑安全问题。因为代码需要部署到客户机器上，简单使用对称加密不安全，主要是担心密钥不安全。因此选用了 SSL/TLS 协议。 使用的python有库可以选用，因此，最大的工作量还是 证书的生成。
-
 找到 一个比较全的资料如何使用OpenSSL工具生成根证书与应用证书，在此留档，以供参考。">
-
-
 <meta itemprop="datePublished" content="2017-11-27T11:43:48&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
-<meta itemprop="wordCount" content="6215">
+<meta itemprop="dateModified" content="2019-05-22T10:34:12&#43;08:00" />
+<meta itemprop="wordCount" content="6190">
 
 
 
-<meta itemprop="keywords" content="CA,openssl," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="CA,openssl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="openssl自签名证书"/>
 <meta name="twitter:description" content="背景
-
 在工作中，遇到一个要写agent的场景，因为agent具有一定的执行能，且由控制端发起，因此就需要考虑安全问题。因为代码需要部署到客户机器上，简单使用对称加密不安全，主要是担心密钥不安全。因此选用了 SSL/TLS 协议。 使用的python有库可以选用，因此，最大的工作量还是 证书的生成。
-
 找到 一个比较全的资料如何使用OpenSSL工具生成根证书与应用证书，在此留档，以供参考。"/>
 
 <!--[if lte IE 9]>
@@ -146,7 +138,7 @@
             <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
             <a href="/categories/%E6%9D%82%E9%A1%B9/"> 杂项 </a>
             </div>
-          <span class="more-meta"> 约 6215 字 </span>
+          <span class="more-meta"> 约 6190 字 </span>
           <span class="more-meta"> 预计阅读 13 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -156,67 +148,70 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#背景">背景</a></li>
-<li><a href="#步骤简记">步骤简记</a></li>
-<li><a href="#各步详解">各步详解</a>
-<ul>
-<li><a href="#生成自签名根证书-即顶级ca">生成自签名根证书（即顶级CA）</a>
-<ul>
-<li><a href="#命令选项和参数解读">命令选项和参数解读</a></li>
-<li><a href="#关于私钥文件加密口令的指定">关于私钥文件加密口令的指定</a></li>
-<li><a href="#关于证书请求文件中的dn字段">关于证书请求文件中的DN字段</a></li>
-<li><a href="#如何指定自签名证书的密钥长度和类型">如何指定自签名证书的密钥长度和类型</a></li>
-</ul></li>
-<li><a href="#为顶级ca的私钥文件去除加密保护">为顶级CA的私钥文件去除加密保护</a>
-<ul>
-<li><a href="#命令选项和参数解读-1">命令选项和参数解读</a></li>
-<li><a href="#关于私钥文件解密口令的指定">关于私钥文件解密口令的指定</a></li>
-<li><a href="#rsa子命令的实际功能">rsa子命令的实际功能</a></li>
-</ul></li>
-<li><a href="#为应用证书-中级证书生成私钥文件">为应用证书/中级证书生成私钥文件</a>
-<ul>
-<li><a href="#命令选项和参数解读-2">命令选项和参数解读</a></li>
-<li><a href="#私钥文件的加密保护">私钥文件的加密保护</a></li>
-</ul></li>
-<li><a href="#为应用证书-中级证书生成-csr-文件-证书请求文件">为应用证书/中级证书生成 csr 文件【证书请求文件】</a>
-<ul>
-<li><a href="#命令选项和参数解读-3">命令选项和参数解读</a></li>
-</ul></li>
-<li><a href="#为-csr-文件签名-生成应用证书-中级证书">为 csr 文件签名，生成应用证书/中级证书</a>
-<ul>
-<li><a href="#命令选项和参数解读-4">命令选项和参数解读</a></li>
-<li><a href="#关于签发中级证书-二级-三级ca-子ca">关于签发中级证书（二级/三级CA，子CA）</a></li>
-<li><a href="#关于批处理模式">关于批处理模式</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#常见问题及其解决">常见问题及其解决</a>
-<ul>
-<li><a href="#没有权限访问">没有权限访问</a></li>
-<li><a href="#找不到-index-txt-问题">找不到 index.txt 问题</a></li>
-<li><a href="#serial-文件问题">serial 文件问题</a>
-<ul>
-<li><a href="#找不到文件">找不到文件</a></li>
-<li><a href="#文件加载出错">文件加载出错</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#生成自签名根证书即顶级ca">生成自签名根证书（即顶级CA）</a>
+      <ul>
+        <li><a href="#命令选项和参数解读">命令选项和参数解读</a></li>
+        <li><a href="#关于私钥文件加密口令的指定">关于私钥文件加密口令的指定</a></li>
+        <li><a href="#关于证书请求文件中的dn字段">关于证书请求文件中的DN字段</a></li>
+        <li><a href="#如何指定自签名证书的密钥长度和类型">如何指定自签名证书的密钥长度和类型</a></li>
+      </ul>
+    </li>
+    <li><a href="#为顶级ca的私钥文件去除加密保护">为顶级CA的私钥文件去除加密保护</a>
+      <ul>
+        <li><a href="#命令选项和参数解读-1">命令选项和参数解读</a></li>
+        <li><a href="#关于私钥文件解密口令的指定">关于私钥文件解密口令的指定</a></li>
+        <li><a href="#rsa子命令的实际功能">rsa子命令的实际功能</a></li>
+      </ul>
+    </li>
+    <li><a href="#为应用证书中级证书生成私钥文件">为应用证书/中级证书生成私钥文件</a>
+      <ul>
+        <li><a href="#命令选项和参数解读-2">命令选项和参数解读</a></li>
+        <li><a href="#私钥文件的加密保护">私钥文件的加密保护</a></li>
+      </ul>
+    </li>
+    <li><a href="#为应用证书中级证书生成-csr-文件证书请求文件">为应用证书/中级证书生成 csr 文件【证书请求文件】</a>
+      <ul>
+        <li><a href="#命令选项和参数解读-3">命令选项和参数解读</a></li>
+      </ul>
+    </li>
+    <li><a href="#为-csr-文件签名生成应用证书中级证书">为 csr 文件签名，生成应用证书/中级证书</a>
+      <ul>
+        <li><a href="#命令选项和参数解读-4">命令选项和参数解读</a></li>
+        <li><a href="#关于签发策略">关于签发策略</a></li>
+        <li><a href="#关于签发中级证书二级三级ca子ca">关于签发中级证书（二级/三级CA，子CA）</a></li>
+        <li><a href="#关于批处理模式">关于批处理模式</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#没有权限访问">没有权限访问</a></li>
+    <li><a href="#找不到-indextxt-问题">找不到 index.txt 问题</a></li>
+    <li><a href="#serial-文件问题">serial 文件问题</a>
+      <ul>
+        <li><a href="#找不到文件">找不到文件</a></li>
+        <li><a href="#文件加载出错">文件加载出错</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-22T10:34:12" title="May 22, 2019">May 22, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h1 id="背景">背景</h1>
-
 <p>在工作中，遇到一个要写agent的场景，因为agent具有一定的执行能，且由控制端发起，因此就需要考虑安全问题。因为代码需要部署到客户机器上，简单使用对称加密不安全，主要是担心密钥不安全。因此选用了 SSL/TLS 协议。 使用的python有库可以选用，因此，最大的工作量还是 证书的生成。</p>
-
 <p>找到 一个比较全的资料<a href="http://blog.csdn.net/howeverpf/article/details/21622545">如何使用OpenSSL工具生成根证书与应用证书</a>，在此留档，以供参考。</p>
-
 <h1 id="步骤简记">步骤简记</h1>
-
 <p>以生成一个二级证书链为例，将会用到以下命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -249,59 +244,47 @@ openssl req -new -key app.key -out app.csr
 <span class="c1"># 使用CA的公私钥文件给 csr 文件签名，生成应用证书，有效期5年</span>  
 openssl ca -in app.csr -out app.crt -cert CARoot.crt -keyfile CARoot.key -days <span class="m">1826</span> -policy policy_anything  
 <span class="c1"># 使用CA的公私钥文件给 csr 文件签名，生成中级证书，有效期5年</span>  
-openssl ca -extensions v3_ca -in app.csr -out app.crt -cert CARoot.crt -keyfile CARoot.key -days <span class="m">1826</span> -policy policy_anything</code></pre></td></tr></table>
+openssl ca -extensions v3_ca -in app.csr -out app.crt -cert CARoot.crt -keyfile CARoot.key -days <span class="m">1826</span> -policy policy_anything
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><strong>简要说明：</strong></p>
-
+</div><p><strong>简要说明：</strong></p>
 <p>1024bit的RSA在2009年因大数成功因数分解而被威胁，因此建议普通用户尽快升级到2048bit或以上。</p>
-
 <h1 id="各步详解">各步详解</h1>
-
-<h2 id="生成自签名根证书-即顶级ca">生成自签名根证书（即顶级CA）</h2>
-
+<h2 id="生成自签名根证书即顶级ca">生成自签名根证书（即顶级CA）</h2>
 <p>典型示例： <code>openssl req -new -x509 -days 5480 -keyout CA.key -out CA.crt</code></p>
-
 <h3 id="命令选项和参数解读">命令选项和参数解读</h3>
-
 <p>示例中，各选项（及参数）的意义如下：</p>
-
 <blockquote>
-<p>req              //使用openssl的req子命令<br />
--new             //生成新的证书请求<br />
--x509            //生成自签名证书<br />
--days 5480       //自签名证书的有效期5480天（15年）【仅当使用了 -x509 选项后有效】<br />
--keyout CA.key   //私钥文件名指定为CA.key【此选项的一般作用是新生成文件命名；但若同时使用了-key选项，则此选项用于原私钥文件的更名】<br />
+<p>req              //使用openssl的req子命令<br>
+-new             //生成新的证书请求<br>
+-x509            //生成自签名证书<br>
+-days 5480       //自签名证书的有效期5480天（15年）【仅当使用了 -x509 选项后有效】<br>
+-keyout CA.key   //私钥文件名指定为CA.key【此选项的一般作用是新生成文件命名；但若同时使用了-key选项，则此选项用于原私钥文件的更名】<br>
 -out CA.crt      //指定输出所生成自签名证书的信息到文件，且文件名为CA.crt【建议不要省略】</p>
 </blockquote>
-
 <h3 id="关于私钥文件加密口令的指定">关于私钥文件加密口令的指定</h3>
-
 <p>运行中会提示输入加密口令，如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">writing new private key to <span class="s1">&#39;CA.key&#39;</span>  
 Enter PEM pass phrase:  
-Verifying - Enter PEM pass phrase:</code></pre></td></tr></table>
+Verifying - Enter PEM pass phrase:
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>此口令用于加密私钥文件 CA.key 中的私钥信息，如果不想在运行过程中还要输入加密口令，则可以使用选项 -passout 在命令中直接指定。选项 -passout 的使用形式为： <code>-passout arg</code>。 其中，arg是选项 -passout 的参数，其格式有多种，详参《OpenSSL官方文档》中关于&rdquo;PASS_PHRASE_ARGUMENTS&rdquo;的介绍。</p>
-
+</div><p>此口令用于加密私钥文件 CA.key 中的私钥信息，如果不想在运行过程中还要输入加密口令，则可以使用选项 -passout 在命令中直接指定。选项 -passout 的使用形式为： <code>-passout arg</code>。 其中，arg是选项 -passout 的参数，其格式有多种，详参《OpenSSL官方文档》中关于&quot;PASS_PHRASE_ARGUMENTS&quot;的介绍。</p>
 <p>本小节典型示例中的命令，可以用选项 -passout 改造如下：
 <code>openssl req -new -x509 -days 5480 -keyout CA.key -out CA.crt -passout pass:1314</code>
 由于Linux系统中可以使用history命令查看历史指令记录，所以出于安全方面的考量，一般如非必要，不建议在命令中直接指定口令。这与mysql登录的时候不在 -p 选项里直接指定登录口令的原因是一致的。</p>
-
 <h3 id="关于证书请求文件中的dn字段">关于证书请求文件中的DN字段</h3>
-
 <p>运行中会提示输入一些 Distinguished Name fields，即证书的识别名信息字段，简称为DN字段，如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -328,12 +311,11 @@ Locality Name (eg, city) [Newbury]:
 Organization Name (eg, company) [My Company Ltd]:GeoAuth Inc.  
 Organizational Unit Name (eg, section) []:.  
 Common Name (eg, your name or your server&#39;s hostname) []:Authentication Global Root  
-Email Address []:.  </code></pre></td></tr></table>
+Email Address []:.  
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>这些DN字段大部分有默认值，默认值由配置文件 openssl.cnf中相关条目指定。如要在某一个DN字段使用默认值，则无需输入任何信息，直接点击&rdquo;Enter&rdquo;键；如果确实某个DN字段的值要置为空，则输入一个 &lsquo;.&rsquo; 后，点击&rdquo;Enter&rdquo;键。
+</div><p>这些DN字段大部分有默认值，默认值由配置文件 openssl.cnf中相关条目指定。如要在某一个DN字段使用默认值，则无需输入任何信息，直接点击&quot;Enter&quot;键；如果确实某个DN字段的值要置为空，则输入一个 &lsquo;.&rsquo; 后，点击&quot;Enter&quot;键。
 这些DN字段主要是拿来识别证书持有者身份的，下表是关于它们的缩写、说明和一些填写说明。</p>
-
 <table>
 <thead>
 <tr>
@@ -343,7 +325,6 @@ Email Address []:.  </code></pre></td></tr></table>
 <th align="left">填写要求</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">Country Name</td>
@@ -351,141 +332,114 @@ Email Address []:.  </code></pre></td></tr></table>
 <td align="left">证书持有者所在国家</td>
 <td align="left">要求填写国家代码，用2个字母表示</td>
 </tr>
-
 <tr>
 <td align="left">State or Province Name</td>
 <td align="left">ST</td>
 <td align="left">证书持有者所在州或省份</td>
 <td align="left">填写全称，可省略不填</td>
 </tr>
-
 <tr>
 <td align="left">Locality Name</td>
 <td align="left">L</td>
 <td align="left">证书持有者所在城市</td>
 <td align="left">可省略不填</td>
 </tr>
-
 <tr>
 <td align="left">Organization Name</td>
 <td align="left">O</td>
 <td align="left">证书持有者所属组织或公司</td>
 <td align="left">最好还是填一下</td>
 </tr>
-
 <tr>
 <td align="left">Organizational Unit Name</td>
 <td align="left">OU</td>
 <td align="left">证书持有者所属部门</td>
 <td align="left">可省略不填</td>
 </tr>
-
 <tr>
 <td align="left">Common Name</td>
 <td align="left">CN</td>
 <td align="left">证书持有者的通用名</td>
 <td align="left">必填。对于非应用证书，它应该在一定程度上具有惟一性；对于应用证书，一般填写服务器域名或通配符样式的域名。</td>
 </tr>
-
 <tr>
 <td align="left">Email Address       证书持有者的通信邮箱</td>
 <td align="left">可省略不填</td>
-<td align="left"></td>
-<td align="left"></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-
 <p>注：表中所谓，证书不是应用证书时，其持有者的通用名要有“唯一性”，是指其通用名不要与一般主机</p>
-
 <p>上常见的信任证书列表或撤销证书列表中的证书产生重复。</p>
-
 <p>如果不想在运行过程中逐个输入这些DN字段的值，则可以使用 -subj 选项在命令中直接指定。选项 -subj 的使用形式为：
 <code>-subj arg</code>
-其中，arg是选项 -subj 的参数，其格式类似于：/type0=value0/type1=value1/type2=&hellip; 形式。每一个 /type=value 形式的单元，都对应了一个完整的DN字段。其中，
- * / 是每一个DN字段的开始标志；
- * type0、type1等等，就是表2-1中提到的DN字段名的缩写；
- * =是DN字段的名和值之间的间隔符；
- * value0、value1等等，就是原本你要在运行过程中逐个输入的DN字段的值。</p>
-
+其中，arg是选项 -subj 的参数，其格式类似于：/type0=value0/type1=value1/type2=&hellip; 形式。每一个 /type=value 形式的单元，都对应了一个完整的DN字段。其中，</p>
+<ul>
+<li>/ 是每一个DN字段的开始标志；</li>
+<li>type0、type1等等，就是表2-1中提到的DN字段名的缩写；</li>
+<li>=是DN字段的名和值之间的间隔符；</li>
+<li>value0、value1等等，就是原本你要在运行过程中逐个输入的DN字段的值。</li>
+</ul>
 <p>对于您要将值置为空的DN字段，您可以略去不写。本小节典型示例中的命令，可以用 <code>-subj</code> 选项改造如下【略去了 L 与 OU 两个DN字段】：
 <code>openssl req -new -x509 -days 5480 -subj /C=US/ST=California/O=GeoAuth\ Inc./CN=Authentication\ Global\ Root -keyout CA.key -out CA.crt</code></p>
-
 <p>需要特别注意的是，如果您设定的DN字段的值如果存在一些特殊字符【比如  （空格）、(（半角左括号）、)（半角右括号）……】，必须经过\（反斜杆）转义。上例中已经给出了空格转义的情况。</p>
-
 <h3 id="如何指定自签名证书的密钥长度和类型">如何指定自签名证书的密钥长度和类型</h3>
-
 <p>如前所述，示例只能生成密钥长度为1024bits的RSA公私钥对。如果要生成密钥长度不为1024bits的RSA公私钥对，或是其他类型的【比如DSA、EC】公私钥对，则必须使用选项 -newkey 来代替 -new 。选项 -newkey 的用法比较复杂，如需详细了解，请参看《OpenSSL官方文档》的<a href="https://www.openssl.org/docs/manmaster/man1/req.html">相关页面</a> 。本小节典型示例中的命令等效于以下命令：
 <code>openssl req -newkey rsa:1024 -x509 -days 5480 -keyout CA.key -out CA.crt</code>
 要生成一个密钥长度为2048bits的RSA公私钥对，命令为：
 <code>openssl req -newkey rsa:2048 -x509 -days 5480 -keyout CA2048.key -out CA2048.crt</code></p>
-
 <h2 id="为顶级ca的私钥文件去除加密保护">为顶级CA的私钥文件去除加密保护</h2>
-
 <p>上节提到，顶级CA的私钥文件是经过加密保护的，以后每当需读取 CA.key 文件中的私钥信息时，都需输入解密口令。这种做法适合有安全需求的场合，但如果觉得不方便，也可以去除这个口令。
 典型示例：<code>penssl rsa -in CA.key -out CA.key</code></p>
-
 <h3 id="命令选项和参数解读-1">命令选项和参数解读</h3>
-
 <p>示例中，各选项/参数的意义如下：</p>
-
 <blockquote>
-<p>rsa           //使用openssl的rsa子命令<br />
--in CA.key    //经加密保护的私钥文件<br />
+<p>rsa           //使用openssl的rsa子命令<br>
+-in CA.key    //经加密保护的私钥文件<br>
 -out CA.key   //解除加密保护后的私钥文件【可以改名】</p>
 </blockquote>
-
 <h3 id="关于私钥文件解密口令的指定">关于私钥文件解密口令的指定</h3>
-
-<p>运行中会提示输入解密口令，如下：
-&gt; Enter pass phrase for CA.key:<br />
-&gt; writing RSA key</p>
-
+<p>运行中会提示输入解密口令，如下：</p>
+<blockquote>
+<p>Enter pass phrase for CA.key:<br>
+writing RSA key</p>
+</blockquote>
 <p>如果不想在运行过程中还要输入解密口令，则可以使用选项 -passin 在命令中直接指定。选项 -passin 的使用形式为： <code>-passin arg</code></p>
-
-<p>其中，arg是选项 -passin 的参数，其格式同选项 -passout 的参数，详参《OpenSSL官方文档》中关于&rdquo;PASS_PHRASE_ARGUMENTS&rdquo;的介绍。</p>
-
+<p>其中，arg是选项 -passin 的参数，其格式同选项 -passout 的参数，详参《OpenSSL官方文档》中关于&quot;PASS_PHRASE_ARGUMENTS&quot;的介绍。</p>
 <p>本小节典型示例中的命令，可以用选项 -passin 改造如下：
 <code>openssl rsa -in CA.key -out CA.key -passin pass:1314</code>
 基于同选项 -passout 一样的考量，一般不建议直接在命令中指定解密口令。</p>
-
 <h3 id="rsa子命令的实际功能">rsa子命令的实际功能</h3>
-
 <p>rsa子命令的功能，更完整来说，应该是RSA密钥的管理。除了此处用到的去除加密保护，还可以用来：更换加解密口令，更换加解密算法【DES、三重DES、IDEA(官方文档上提到过，但是有些版本好像不支持，比如说我安装的)、AES（官方文档上没提到，我安装的版本支持）】，更换密钥文件的编码方式等等。</p>
-
-<h2 id="为应用证书-中级证书生成私钥文件">为应用证书/中级证书生成私钥文件</h2>
-
+<h2 id="为应用证书中级证书生成私钥文件">为应用证书/中级证书生成私钥文件</h2>
 <p>典型示例：<code>openssl genrsa -out app.key 2048</code></p>
-
 <h3 id="命令选项和参数解读-2">命令选项和参数解读</h3>
-
 <p>示例中，各选项/参数的意义如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-plain" data-lang="plain">genrsa         //使用openssl的genrsa子命令  
 -out app.key   //指定输出生成的私钥信息到文件， 且文件名为app.key【建议别省略】   
-2048           //指定所生成私钥的比特长度【务必放在最后一个】 </code></pre></td></tr></table>
+2048           //指定所生成私钥的比特长度【务必放在最后一个】 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>其中，选项 -out 若是省略的话，openssl不会以文件形式输出生成的 私钥信息，而是会默认将私钥的信息直接打印到屏幕上，这不符合我们的要求。所以建议这个选项不要省略！</p>
-
+</div><p>其中，选项 -out 若是省略的话，openssl不会以文件形式输出生成的 私钥信息，而是会默认将私钥的信息直接打印到屏幕上，这不符合我们的要求。所以建议这个选项不要省略！</p>
 <p>genrsa子命令还可以有其他一些选项及参数，但不论还有多少选项，都必须把指定私钥长度的参数放在最后一个。【如果指定私钥长度的参数不是最后一个，则其后的参数好像会被舍弃。】</p>
-
 <h3 id="私钥文件的加密保护">私钥文件的加密保护</h3>
-
-<p>本小节典型示例所给出的命令，生成的是未经任何加密保护的私钥文件。这种方式用起来比较方便，但非常不安全。如果要为私钥文件附加加密保护，则有两种方式：
-* 在生成私钥文件的同时就指定输出前要用某种加密算法加密保护；
-* 生成明文的私钥文件后用 rsa 子命令附加某种加密算法的加密保护</p>
-
+<p>本小节典型示例所给出的命令，生成的是未经任何加密保护的私钥文件。这种方式用起来比较方便，但非常不安全。如果要为私钥文件附加加密保护，则有两种方式：</p>
+<ul>
+<li>在生成私钥文件的同时就指定输出前要用某种加密算法加密保护；</li>
+<li>生成明文的私钥文件后用 rsa 子命令附加某种加密算法的加密保护</li>
+</ul>
 <p>我计算机上安装的openssl版本，在两种方式下都支持这些加密算法选项：-des，-des3，-aes128，-aes192，-aes256。以加密选用192位的AES算法为例，命令如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -494,19 +448,16 @@ Email Address []:.  </code></pre></td></tr></table>
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># 在生成私钥文件的同时就指定输出前要用192位的AES算法加密保护</span>  
 openssl genrsa -aes192 -out app.key <span class="m">1024</span>  
 <span class="c1"># 生成明文的私钥文件后用 rsa 子命令附加192位的AES算法加密保护</span>  
-openssl rsa -aes192 -in app.key -out app.key</code></pre></td></tr></table>
+openssl rsa -aes192 -in app.key -out app.key
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>上例中的两个命令，都会要求在运行中输入加密口令。同样的，虽然不建议，但是openssl依然支持在命令中使用选项 -passout 指定加密口令，选项 -passout 的用法参考2.1[2]小节。唯一需要额外注意的是，对于genrsa子命令，选项 -passout 应放在 指定密钥长度的参数 前面。</p>
-
-<h2 id="为应用证书-中级证书生成-csr-文件-证书请求文件">为应用证书/中级证书生成 csr 文件【证书请求文件】</h2>
-
+</div><p>上例中的两个命令，都会要求在运行中输入加密口令。同样的，虽然不建议，但是openssl依然支持在命令中使用选项 -passout 指定加密口令，选项 -passout 的用法参考2.1[2]小节。唯一需要额外注意的是，对于genrsa子命令，选项 -passout 应放在 指定密钥长度的参数 前面。</p>
+<h2 id="为应用证书中级证书生成-csr-文件证书请求文件">为应用证书/中级证书生成 csr 文件【证书请求文件】</h2>
 <p>典型示例：openssl req -new -key app.key -out app.csr</p>
-
 <h3 id="命令选项和参数解读-3">命令选项和参数解读</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -515,21 +466,17 @@ openssl rsa -aes192 -in app.key -out app.key</code></pre></td></tr></table>
 <pre class="chroma"><code class="language-plain" data-lang="plain">req             //使用openssl的req子命令  
 -new            //生成新的证书请求  
 -key app.key    //指定是为app.key文件中的私钥生成证书请求  
--out app.csr    //指定输出所生成证书请求的信息到文件，且文件名为app.csr  </code></pre></td></tr></table>
+-out app.csr    //指定输出所生成证书请求的信息到文件，且文件名为app.csr  
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>这和2.1节使用的是openssl的同一个子命令，所以参数的意义很多具有共通性。命令运行中也会要求输入一些DN字段的值，参看本文2.1 [3] 小节中的相关介绍。同样的，可以使用-subj选项在命令中直接指定这些DN字段的值。</p>
-
-<h2 id="为-csr-文件签名-生成应用证书-中级证书">为 csr 文件签名，生成应用证书/中级证书</h2>
-
+</div><p>这和2.1节使用的是openssl的同一个子命令，所以参数的意义很多具有共通性。命令运行中也会要求输入一些DN字段的值，参看本文2.1 [3] 小节中的相关介绍。同样的，可以使用-subj选项在命令中直接指定这些DN字段的值。</p>
+<h2 id="为-csr-文件签名生成应用证书中级证书">为 csr 文件签名，生成应用证书/中级证书</h2>
 <p>典型示例：<code>openssl ca -in app.csr -out app.crt -cert CA.crt -keyfile CA.key -days 1826 -policy policy_anything</code></p>
-
 <h3 id="命令选项和参数解读-4">命令选项和参数解读</h3>
-
 <p>示例中，各选项/参数的意义如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -544,23 +491,20 @@ openssl rsa -aes192 -in app.key -out app.key</code></pre></td></tr></table>
 -cert CA.crt              <span class="c1">#指定为应用/中级证书签名的CA的公钥证书为CA.crt【用到CA证书的持有者信息】</span>  
 -keyfile CA.key           <span class="c1">#指定为应用/中级证书签名的CA的私钥文件为CA.key【用CA私钥实际执行签名】</span>  
 -days <span class="m">1826</span>                <span class="c1">#指定所签发证书的有效期为1826天（5年）</span>  
--policy policy_anything   <span class="c1">#指定签发策略为 policy_anything 【即，允许所签发证书的持有者信息和颁发者信息之间不遵守任何匹配策略】</span>  </code></pre></td></tr></table>
+-policy policy_anything   <span class="c1">#指定签发策略为 policy_anything 【即，允许所签发证书的持有者信息和颁发者信息之间不遵守任何匹配策略】</span>  
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>其中，选项 -out 若是省略的话，openssl不会以文件形式输出生成的 应用证书/中级证书信息，而是会默认将证书的信息直接打印到屏幕上，这一般不符合我们的要求。所以建议这个选项不要省略！</p>
-
-<p>### 关于签发策略
-在本节的典型示例中，我们使用了选项-policy来指定签发策略为 <code>policy_anything</code>。如果没有使用此选项，则签发策略使用由配置文件 <code>openssl.cnf</code> 中相关条目指定的默认策略。如果您没动过该配置文件的话，则默认策略为 <code>policy_match</code>。此策略要求CA的公钥证书和应用证书请求文件中的Country Name、State or Province Name、Organization Name这三个字段必须 match 【也就是一样】。如果您在应用证书请求文件中指定了和CA的公钥证书不一样的Country Name，且没有使用选项-policy，则会得到类似于下方的提示：</p>
-
+</div><p>其中，选项 -out 若是省略的话，openssl不会以文件形式输出生成的 应用证书/中级证书信息，而是会默认将证书的信息直接打印到屏幕上，这一般不符合我们的要求。所以建议这个选项不要省略！</p>
+<h3 id="关于签发策略">关于签发策略</h3>
+<p>在本节的典型示例中，我们使用了选项-policy来指定签发策略为 <code>policy_anything</code>。如果没有使用此选项，则签发策略使用由配置文件 <code>openssl.cnf</code> 中相关条目指定的默认策略。如果您没动过该配置文件的话，则默认策略为 <code>policy_match</code>。此策略要求CA的公钥证书和应用证书请求文件中的Country Name、State or Province Name、Organization Name这三个字段必须 match 【也就是一样】。如果您在应用证书请求文件中指定了和CA的公钥证书不一样的Country Name，且没有使用选项-policy，则会得到类似于下方的提示：</p>
 <blockquote>
-<p>The countryName field needed to be the same in the<br />
+<p>The countryName field needed to be the same in the<br>
 CA certificate (US) and the request (CN)</p>
 </blockquote>
-
 <p>查看配置文件 openssl.cnf 中相关条目，我们可以看到以下内容，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -611,25 +555,23 @@ localityName        = optional
 organizationName    = optional  
 organizationalUnitName  = optional  
 commonName      = supplied  
-emailAddress        = optional  </code></pre></td></tr></table>
+emailAddress        = optional  
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>看到这，原因就很显然了。所以若是您要在应用证书请求文件中指定和CA的公钥证书不一样的C/ST/O，且要签名成功，则有以下三种方式：
-1. 加上<code>-policy</code>选项，指定本次使用的签发策略为 <code>policy_anything</code>；
-2. 将配置文件 <code>openssl.cnf</code> 中的默认策略由 <code>policy_match</code>改成 <code>policy_anything</code>；
-3. 将策略 <code>policy_match</code> 中的相关条目由 <code>match</code>改成 <code>optional</code> ；</p>
-
+</div><p>看到这，原因就很显然了。所以若是您要在应用证书请求文件中指定和CA的公钥证书不一样的C/ST/O，且要签名成功，则有以下三种方式：</p>
+<ol>
+<li>加上<code>-policy</code>选项，指定本次使用的签发策略为 <code>policy_anything</code>；</li>
+<li>将配置文件 <code>openssl.cnf</code> 中的默认策略由 <code>policy_match</code>改成 <code>policy_anything</code>；</li>
+<li>将策略 <code>policy_match</code> 中的相关条目由 <code>match</code>改成 <code>optional</code> ；</li>
+</ol>
 <p>为什么openssl会使用这样的默认策略呢？其实很简单，openssl认定，仅当您建立组织内部的信任关系时，您才需要自己做CA。既然是组织内部的信任关系，当然CA和应用证书就该有一样的所在国家、所在省份，以及所属组织。</p>
-
-<h3 id="关于签发中级证书-二级-三级ca-子ca">关于签发中级证书（二级/三级CA，子CA）</h3>
-
+<h3 id="关于签发中级证书二级三级ca子ca">关于签发中级证书（二级/三级CA，子CA）</h3>
 <p>由本节典型示例命令生成的证书只能作为应用证书，因为它不具有继续签署下级证书的权限。下图展示了中级证书与应用证书的区别。
-由上图可以看出，二者主要是在证书的扩展字段<code>Subject Type</code>的取值有所不同。中级证书该字段取值为&rdquo;<code>CA</code>&ldquo;，表明此证书依然可以作为CA，继续签发下级证书；一般应用证书该字段的取值为&rdquo;<code>End Entity</code>&ldquo;，表明这已经是证书链的最后一个结点，自然也就不能继续签发下级证书。</p>
-
+由上图可以看出，二者主要是在证书的扩展字段<code>Subject Type</code>的取值有所不同。中级证书该字段取值为&quot;<code>CA</code>&rdquo;，表明此证书依然可以作为CA，继续签发下级证书；一般应用证书该字段的取值为&quot;<code>End Entity</code>&rdquo;，表明这已经是证书链的最后一个结点，自然也就不能继续签发下级证书。</p>
 <p>查看配置文件 <code>openssl.cnf</code> 中相关条目，可以看到如下内容：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -678,20 +620,20 @@ basicConstraints=CA:FALSE
 #basicConstraints = critical,CA:true  
 # So we do this instead.  
 basicConstraints = CA:true  
-……………………  </code></pre></td></tr></table>
+……………………  
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>由此可以看出，为什么默认生成的都是纯应用证书。若要生成中级证书（一般是出于信任关系建立的便利），则有以下方式：
-1. 上级CA在签署此证书时，加上 -extensions 选项，且选项参数设为 v3_ca （如步骤简记中所示）；
-2. 将 CA_default 条目中 x509_extensions 的值由 usr_cert改为 v3_ca；
-3. 将 usr_cert 条目中 basicConstraints的值由 CA:FALSE 改为 CA:true；</p>
-
+</div><p>由此可以看出，为什么默认生成的都是纯应用证书。若要生成中级证书（一般是出于信任关系建立的便利），则有以下方式：</p>
+<ol>
+<li>上级CA在签署此证书时，加上 -extensions 选项，且选项参数设为 v3_ca （如步骤简记中所示）；</li>
+<li>将 CA_default 条目中 x509_extensions 的值由 usr_cert改为 v3_ca；</li>
+<li>将 usr_cert 条目中 basicConstraints的值由 CA:FALSE 改为 CA:true；</li>
+</ol>
 <h3 id="关于批处理模式">关于批处理模式</h3>
-
 <p>执行本节典型示例命令生成证书时，会遇到类似于下面的提示：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -706,35 +648,24 @@ Sign the certificate? [y/n]:y
   
 1 out of 1 certificate requests certified, commit? [y/n]y  
 Write out database with 1 new entries  
-Data Base Updated </code></pre></td></tr></table>
+Data Base Updated 
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>也就是说，这个命令是有交互的，你必须在运行过程中手工完成两次确认输入。但我们在自己生成证书链的时候，证书请求文件和CA证书都是由我们自己生成的，一般并不需要确认。另外，我们一旦需要用程序自动化/批量化处理，也会显得麻烦
+</div><p>也就是说，这个命令是有交互的，你必须在运行过程中手工完成两次确认输入。但我们在自己生成证书链的时候，证书请求文件和CA证书都是由我们自己生成的，一般并不需要确认。另外，我们一旦需要用程序自动化/批量化处理，也会显得麻烦
 说到底，一句话，如果你不想有交互，那么可以使用 -batch 选项。本小节典型示例中的命令，可以用选项 -batch  改造如下：
 <code>openssl ca -in app.csr -out app.crt -cert CA.crt -keyfile CA.key -days 1826 -policy policy_anything -batch</code></p>
-
 <h1 id="常见问题及其解决">常见问题及其解决</h1>
-
 <h2 id="没有权限访问">没有权限访问</h2>
-
 <p>问题表现：没有权限访问 <code>/etc/pki/CA/newcerts</code></p>
-
 <p>解决办法：需要root权限执行</p>
-
-<h2 id="找不到-index-txt-问题">找不到 index.txt 问题</h2>
-
+<h2 id="找不到-indextxt-问题">找不到 index.txt 问题</h2>
 <p>问题表现：  <code>ubable to open '/etc/pki/CA/index.txt'</code>
 解决办法： 需要在<code>/etc/pki/CA/</code>目录下建立一个空文件 <code>index.txt</code></p>
-
 <h2 id="serial-文件问题">serial 文件问题</h2>
-
 <h3 id="找不到文件">找不到文件</h3>
-
 <p>问题表现： 找不到文件<code>serial</code>文件（ No such file or directory: bss_file.c: 402: fopen( &lsquo;/etc/pki/CA/serial&rsquo;, &lsquo;r&rsquo;)）
 解决办法： 需要在<code>/etc/pki/CA/</code>目录下建立一个名为 <code>serial</code>的文本文件切内容为00</p>
-
 <h3 id="文件加载出错">文件加载出错</h3>
-
 <p>问题表现： 文件load出错（unable to load number from /etc/pki/CA/serial）
 解决办法： 查看 <code>serial</code>文件内容是否为数字</p>
     </div>
@@ -747,8 +678,8 @@ Data Base Updated </code></pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2019-05-22
+        
     </span>
   </p>
   
@@ -779,7 +710,7 @@ Data Base Updated </code></pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2017-11-27 11:43:48 \x2b0000 UTC',
+        id: '2017-11-27 11:43:48 \u002b0000 UTC',
         title: 'openssl自签名证书',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -825,7 +756,7 @@ Data Base Updated </code></pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -849,7 +780,10 @@ Data Base Updated </code></pre></td></tr></table>
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

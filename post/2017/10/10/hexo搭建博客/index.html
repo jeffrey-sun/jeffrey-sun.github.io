@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2017/10/10/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" />
@@ -35,43 +35,35 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="hexo搭建博客" />
 <meta property="og:description" content="hexo 安装使用
-
 0. 需要环境
-
 hexo 安装需要nodejs环境，当前实验使用的是V6.11.4 x64 版本
 在官网有详细的中文文档,这里仅仅是留作参考" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2017/10/10/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" />
 <meta property="article:published_time" content="2017-10-10T22:09:32+08:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2019-05-22T10:34:12+08:00" />
 <meta itemprop="name" content="hexo搭建博客">
 <meta itemprop="description" content="hexo 安装使用
-
 0. 需要环境
-
 hexo 安装需要nodejs环境，当前实验使用的是V6.11.4 x64 版本
 在官网有详细的中文文档,这里仅仅是留作参考">
-
-
 <meta itemprop="datePublished" content="2017-10-10T22:09:32&#43;08:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
-<meta itemprop="wordCount" content="844">
+<meta itemprop="dateModified" content="2019-05-22T10:34:12&#43;08:00" />
+<meta itemprop="wordCount" content="825">
 
 
 
-<meta itemprop="keywords" content="hexo,js,前端," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="hexo,js,前端," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="hexo搭建博客"/>
 <meta name="twitter:description" content="hexo 安装使用
-
 0. 需要环境
-
 hexo 安装需要nodejs环境，当前实验使用的是V6.11.4 x64 版本
 在官网有详细的中文文档,这里仅仅是留作参考"/>
 
@@ -145,7 +137,7 @@ hexo 安装需要nodejs环境，当前实验使用的是V6.11.4 x64 版本
       <div class="post-meta">
         <span class="post-time"> 2017-10-10 </span>
         
-          <span class="more-meta"> 约 844 字 </span>
+          <span class="more-meta"> 约 825 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -155,83 +147,76 @@ hexo 安装需要nodejs环境，当前实验使用的是V6.11.4 x64 版本
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#hexo-安装使用">hexo 安装使用</a>
-<ul>
-<li><a href="#0-需要环境">0. 需要环境</a></li>
-<li><a href="#1-安装-hexo">1. 安装 Hexo</a></li>
-<li><a href="#初始化一个-hexo-项目">初始化一个 Hexo 项目</a></li>
-<li><a href="#开始第一篇文章">开始第一篇文章</a>
-<ul>
-<li><a href="#front-matter">Front-matter</a></li>
-</ul></li>
-</ul></li>
-<li><a href="#主题">主题</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#hexo-安装使用">hexo 安装使用</a>
+      <ul>
+        <li><a href="#0-需要环境">0. 需要环境</a></li>
+        <li><a href="#1-安装-hexo">1. 安装 Hexo</a></li>
+        <li><a href="#初始化一个-hexo-项目">初始化一个 Hexo 项目</a></li>
+        <li><a href="#开始第一篇文章">开始第一篇文章</a></li>
+      </ul>
+    </li>
+    <li><a href="#主题">主题</a></li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-22T10:34:12" title="May 22, 2019">May 22, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h2 id="hexo-安装使用">hexo 安装使用</h2>
-
 <h3 id="0-需要环境">0. 需要环境</h3>
-
 <p>hexo 安装需要nodejs环境，当前实验使用的是<code>V6.11.4 x64</code> 版本
 在官网有详细的<a href="https://hexo.io/zh-cn/docs/">中文文档</a>,这里仅仅是留作参考</p>
-
 <h3 id="1-安装-hexo">1. 安装 Hexo</h3>
-
 <ol>
 <li>检查有没有安装<code>npm</code>， <code>npm -v</code>, 如果出现版本号信息，表示nodejs已正常安装；若没有出现，则需要安装nodejs。</li>
 <li>执行 <code>npm install -g hexo-cli</code>进行全局安装。</li>
 </ol>
-
 <h3 id="初始化一个-hexo-项目">初始化一个 Hexo 项目</h3>
-
 <p>在 Hexo 安装完成之后，可以执行<code>hexo init &lt;folder&gt;</code>、<code>cd &lt;folder&gt;</code>、<code>npm install</code> 三条命令进行项目初始化。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">hexo init &lt;folder&gt;
 <span class="nb">cd</span> &lt;folder&gt;
-npm install</code></pre></td></tr></table>
+npm install
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>初始化完成后指定的文件夹目录如下：
-&gt;.
-&gt;├── _config.yml
-&gt;├── package.json
-&gt;├── scaffolds
-&gt;├── source
-&gt;|   ├── _drafts
-&gt;|   └── _posts
-&gt;└── themes</p>
-
+</div><p>初始化完成后指定的文件夹目录如下：</p>
+<blockquote>
+<p>.
+├── _config.yml
+├── package.json
+├── scaffolds
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes</p>
+</blockquote>
 <p><em>_config.yml</em>
 配置文件，站点相关的配置在这里进行</p>
-
 <h3 id="开始第一篇文章">开始第一篇文章</h3>
-
 <p>你可以执行下列命令来创建一篇新文章。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">hexo new <span class="o">[</span>layout<span class="o">]</span> &lt;title&gt;</code></pre></td></tr></table>
-</div>
-</div>
-<p>该命令会在source/_posts目录下生成一个与标题同名的md文件。也可以在source/_posts目录下直接新建md文件</p>
+<pre class="chroma"><code class="language-sh" data-lang="sh">hexo new <span class="o">[</span>layout<span class="o">]</span> &lt;title&gt;
 
+</code></pre></td></tr></table>
+</div>
+</div><p>该命令会在source/_posts目录下生成一个与标题同名的md文件。也可以在source/_posts目录下直接新建md文件</p>
 <h4 id="front-matter">Front-matter</h4>
-
 <p>Front-matter 是文件最上方以 &mdash; 分隔的区域，用于指定个别文件的变量。
 以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。
 |参数|描述|默认值|
@@ -243,18 +228,14 @@ npm install</code></pre></td></tr></table>
 |comments|开启文章的评论功能|true|
 |tags|标签（不适用于分页）||
 |categories|分类（不适用于分页）||
-|permalink| 覆盖文章网址||</p>
-
+|permalink|	覆盖文章网址||</p>
 <h2 id="主题">主题</h2>
-
 <p>基本操作上面的基本够用，如果有什么遗忘的，再看看官方文档。但是有一点无法忍受的是就是页面不好看。经过几次的选择，最后选择了<a href="https://github.com/iissnan/hexo-theme-next">Next</a>。其他的主题都有一些无法容忍的小缺点。</p>
-
 <ul>
 <li>安装：在博客根目录下执行 <code>git clone https://github.com/iissnan/hexo-theme-next.git themes/next</code> 。</li>
 <li>使用：修改博客根目录下的_config.yml配置文件中的theme属性，将其设置为next。</li>
 <li>修改主题配置 <code>\themes\next\_config.yml</code>。</li>
 </ul>
-
 <p>主题配置基按照 官方文档来，中文的支持很好。</p>
     </div>
 
@@ -266,8 +247,8 @@ npm install</code></pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2019-05-22
+        
     </span>
   </p>
   
@@ -295,7 +276,7 @@ npm install</code></pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2017-10-10 22:09:32 \x2b0800 CST',
+        id: '2017-10-10 22:09:32 \u002b0800 CST',
         title: 'hexo搭建博客',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -341,7 +322,7 @@ npm install</code></pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -365,7 +346,10 @@ npm install</code></pre></td></tr></table>
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

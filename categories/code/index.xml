@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>code on Jeffrey&#39;s blog</title>
@@ -18,7 +18,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2017/10/17/form%E5%B5%8C%E5%A5%97form%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;h1 id=&#34;故事背景&#34;&gt;故事背景&lt;/h1&gt;
-
 &lt;p&gt;在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过&lt;code&gt;$(formName).data(&amp;quot;bootstrapValidator&amp;quot;)&lt;/code&gt;获取到对象，进行相应的验证操作。但是在重新执行&lt;code&gt;render&lt;/code&gt;函数进行渲染的时候，就会报错。于是纠结很久。&lt;/p&gt;</description>
     </item>
     

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/" />
@@ -36,7 +36,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,12 +45,9 @@
 <meta property="og:description" content="路在脚下，心向远方" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.jeffreysun.net/" />
-
 <meta property="og:updated_time" content="2019-09-01T21:51:54+08:00" />
 <meta itemprop="name" content="Jeffrey&#39;s blog">
-<meta itemprop="description" content="路在脚下，心向远方">
-
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="路在脚下，心向远方"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jeffrey&#39;s blog"/>
 <meta name="twitter:description" content="路在脚下，心向远方"/>
 
@@ -168,7 +166,7 @@
     <div class="post-meta">
       <span class="post-time"> 2019-05-20 </span>
       
-        <span class="more-meta"> 约 681 字 </span>
+        <span class="more-meta"> 约 669 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
@@ -200,7 +198,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>最开始使用outlook，由于C盘占用越来越大，后面使用 Foxmail作为邮件接收终端。近期因为公司邮件服务升级说Foxmail不支持升级后的协议，因此就开始查找迁移数据位置的办法。</p>
     </div>
     <div class="read-more">
@@ -217,7 +214,7 @@
       <div class="post-category">
           <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
           </div>
-        <span class="more-meta"> 约 1329 字 </span>
+        <span class="more-meta"> 约 1308 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -225,11 +222,8 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>需要安装 sonarqube，使用mysql的话需要使用5.6或以上版本，我这边能找到的mysql服务基本是5.5.32就是最新的了，还能找到5.0的。因此只能自己装了。</p>
-
 <h1 id="尝试过程">尝试过程</h1>
-
 <p>因为机器没有外网，因此，安装起来比较麻烦。第一反应是使用RPM包安装。最后启动失败，不知道是别人的安装教程有问题还是机器的系统环境有问题。尝试过两次后放弃，打算使用源码的方式安装。
 因为只是临时使用一下，能够跑起来就可以，设置什么的就忽略了。</p>
     </div>
@@ -279,7 +273,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h2 id="背景">背景</h2>
-
 <p>一次艰辛的python代码调试。 poen函数，先后遇到 <code>子进程kill不掉</code>、 <code>执行任务text file busy</code>（让我一个英语盲， 竟然能这么熟练的敲出这三个单词，一定是经历了什么不为人知的···）。 简单说明一下程序的作用， 从网络接收脚本， 然后执行脚本， 最后收集脚本执行的结果。嗯，就是这样简单。 网络服务采用的是多线程模式，子进程采用 popen方式打开，输出使用管道。 时间紧， 直接跳转到最后看总结即可。</p>
     </div>
     <div class="read-more">
@@ -304,7 +297,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="引言">引言</h1>
-
 <p>今天电脑入域，强制切换用户了，之后这个笔记本很久没有开，什么环境也没有。想着最近可能还是需要在家看点东西，因此折腾一下环境。听说 VScode不错，弄了半天，还是不怎么顺心。因此还是打算折腾一下 稍微熟悉点的 sublime text（机器比较老，担心IDE跑不动，特别<code>jetbrains</code> 家的）。</p>
     </div>
     <div class="read-more">
@@ -329,7 +321,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h2 id="引言">引言</h2>
-
 <p>使用docker 过程中经常直接重启了docker服务，导致正在运行的容器异常退出，删除的时候会报错。在这里总结一下遇到的无法删除容器的教训。</p>
     </div>
     <div class="read-more">
@@ -354,9 +345,7 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="docker容器修改时区">docker容器修改时区</h1>
-
 <p>在容器中，执行<code>date</code>显示的时间可能出现八小时的时间差，这是因为docker默认使用时区为0。</p>
-
 <p>在<code>/usr/share/zoneinfo</code>目录下有大量的时区文件，根据自己的需要把自己需要的时区信息拷贝到<code>/etc/</code>目录下，重命名为 <code>localtime</code>就可以。这里我一般使用 <code>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code> 。</p>
     </div>
     <div class="read-more">
@@ -409,7 +398,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -433,7 +422,10 @@
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins on Jeffrey&#39;s blog</title>
@@ -18,7 +18,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/03/16/jenkins%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
       <description>&lt;h2 id=&#34;jenkins插件安装&#34;&gt;jenkins插件安装&lt;/h2&gt;
-
 &lt;p&gt;为了能够从xml中获取Unit test 的结果，可以安装 Publish Junit test result report 组件。使用时需要制定xml文件位置， 可以使用&lt;code&gt;*&lt;/code&gt;进行匹配&lt;/p&gt;</description>
     </item>
     
@@ -29,20 +28,15 @@
       
       <guid>https://blog.jeffreysun.net/post/2018/03/12/jenkins%E5%AE%89%E8%A3%85/</guid>
       <description>&lt;h2 id=&#34;环境介绍&#34;&gt;环境介绍：&lt;/h2&gt;
-
 &lt;p&gt;目标安装环境：Ubuntu 16.04.3 LTS
 JDK：1.8.0_151&lt;/p&gt;
-
 &lt;h2 id=&#34;安装方式&#34;&gt;安装方式&lt;/h2&gt;
-
-&lt;h3 id=&#34;最简安装-网络畅通情况下&#34;&gt;最简安装（网络畅通情况下）&lt;/h3&gt;
-
+&lt;h3 id=&#34;最简安装网络畅通情况下&#34;&gt;最简安装（网络畅通情况下）&lt;/h3&gt;
 &lt;h4 id=&#34;安装软件&#34;&gt;安装软件&lt;/h4&gt;
-
 &lt;h5 id=&#34;执行以下命令&#34;&gt;执行以下命令：&lt;/h5&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
@@ -51,7 +45,8 @@ JDK：1.8.0_151&lt;/p&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo apt-key add -
 sudo sh -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;echo deb http://pkg.jenkins.io/debian-stable binary/ &amp;gt; /etc/apt/sources.list.d/jenkins.list&amp;#39;&lt;/span&gt;
 sudo apt-get update
-sudo apt-get install jenkins&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+sudo apt-get install jenkins
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
     </item>

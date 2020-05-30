@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2018/03/26/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/" />
@@ -35,35 +35,30 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="docker容器网络设置" />
 <meta property="og:description" content="引言
-
 docker 是一个非常方便的工具，在在使用过程中，需要使用一些网络相关的信息。找了一些资料，在这里做点笔记。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2018/03/26/docker%E5%AE%B9%E5%99%A8%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/" />
 <meta property="article:published_time" content="2018-03-26T14:04:58+00:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2019-05-22T10:34:12+08:00" />
 <meta itemprop="name" content="docker容器网络设置">
 <meta itemprop="description" content="引言
-
 docker 是一个非常方便的工具，在在使用过程中，需要使用一些网络相关的信息。找了一些资料，在这里做点笔记。">
-
-
 <meta itemprop="datePublished" content="2018-03-26T14:04:58&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
-<meta itemprop="wordCount" content="1356">
+<meta itemprop="dateModified" content="2019-05-22T10:34:12&#43;08:00" />
+<meta itemprop="wordCount" content="1357">
 
 
 
-<meta itemprop="keywords" content="docker," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker容器网络设置"/>
 <meta name="twitter:description" content="引言
-
 docker 是一个非常方便的工具，在在使用过程中，需要使用一些网络相关的信息。找了一些资料，在这里做点笔记。"/>
 
 <!--[if lte IE 9]>
@@ -138,7 +133,7 @@ docker 是一个非常方便的工具，在在使用过程中，需要使用一�
         <div class="post-category">
             <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
             </div>
-          <span class="more-meta"> 约 1356 字 </span>
+          <span class="more-meta"> 约 1357 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -148,36 +143,30 @@ docker 是一个非常方便的工具，在在使用过程中，需要使用一�
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#引言">引言</a></li>
-<li><a href="#docker网络模式">docker网络模式</a>
-<ul>
-<li><a href="#bridge-模式网络">bridge 模式网络</a></li>
-<li><a href="#host模式网络">host模式网络</a></li>
-<li><a href="#container模式网络">container模式网络</a></li>
-<li><a href="#none模式网络">none模式网络</a></li>
-</ul></li>
-<li><a href="#使用固定ip">使用固定IP</a></li>
-<li><a href="#参考资料">参考资料</a></li>
-</ul>
+  <ul>
+    <li><a href="#bridge-模式网络">bridge 模式网络</a></li>
+    <li><a href="#host模式网络">host模式网络</a></li>
+    <li><a href="#container模式网络">container模式网络</a></li>
+    <li><a href="#none模式网络">none模式网络</a></li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-22T10:34:12" title="May 22, 2019">May 22, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h1 id="引言">引言</h1>
-
 <p>docker 是一个非常方便的工具，在在使用过程中，需要使用一些网络相关的信息。找了一些资料，在这里做点笔记。</p>
-
 <h1 id="docker网络模式">docker网络模式</h1>
-
 <p>docker网络有四种模式：桥模式、主机模式、容器模式和无网络模式。</p>
-
 <h2 id="bridge-模式网络">bridge 模式网络</h2>
-
 <p>在桥模式中，Docker守护进程创建一个虚拟网卡，附加在其上的任何网卡之间都能自动转发数据包。默认情况下，守护进程会创建一对对等接口，将其中一个接口设置为容器的eth0接口，另一个接口放置在宿主机的命名空间中，从而将宿主机上的所有容器都连接到这个内部网络上。同时，守护进程还会从网桥的私有地址空间中分配一个IP地址和子网给该容器。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -190,22 +179,19 @@ $ docker ps
 CONTAINER ID   IMAGE                  COMMAND    CREATED
 STATUS         PORTS                  NAMES
 17d447b7425d   nginx:1.9.1            nginx -g   <span class="m">19</span> seconds ago
-Up <span class="m">18</span> seconds  <span class="m">0</span>.0.0.0:49153-&gt;443/tcp, <span class="m">0</span>.0.0.0:49154-&gt;80/tcp  trusting_feynman</code></pre></td></tr></table>
+Up <span class="m">18</span> seconds  0.0.0.0:49153-&gt;443/tcp, 0.0.0.0:49154-&gt;80/tcp  trusting_feynman
+</code></pre></td></tr></table>
 </div>
-</div>
-<blockquote>
+</div><blockquote>
 <p>因为bridge模式是Docker的默认设置，所以你也可以使用docker run -d -P nginx:1.9.1。如果你没有使用-P（发布该容器暴露的所有端口）或者-p
 host_port:container_port（发布某个特定端口），IP数据包就不能从宿主机之外路由到容器中。</p>
 </blockquote>
-
 <p>{% asset_img bridge-mode.png breige %}</p>
-
 <h2 id="host模式网络">host模式网络</h2>
-
 <p>该模式将禁用Docker容器的网络隔离。因为容器共享了宿主机的网络命名空间，直接暴露在公共网络中。因此，你需要通过端口映射（port mapping）来进行协调。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -224,31 +210,27 @@ host_port:container_port（发布某个特定端口），IP数据包就不能从
 <pre class="chroma"><code class="language-sh" data-lang="sh">$ docker run -dit --rm -net<span class="o">=</span>host --name<span class="o">=</span>testnet  centos:7
 
 $ ip addr <span class="p">|</span> grep -A <span class="m">2</span> eth0:
-<span class="m">2</span>: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc pfifo_fast state UP group default qlen <span class="m">1000</span>
-    link/ether <span class="m">52</span>:54:00:c6:38:28 brd ff:ff:ff:ff:ff:ff
-    inet <span class="m">172</span>.27.16.10/20 brd <span class="m">172</span>.27.31.255 scope global eth0
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc pfifo_fast state UP group default qlen <span class="m">1000</span>
+    link/ether 52:54:00:c6:38:28 brd ff:ff:ff:ff:ff:ff
+    inet 172.27.16.10/20 brd 172.27.31.255 scope global eth0
 
 $ docker <span class="nb">exec</span> -it testnet bash
 <span class="c1"># apt-get update</span>
 <span class="c1"># apt-get install iproute2</span>
 <span class="c1"># ip addr | grep -A 2 eth0:</span>
-<span class="m">2</span>: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc pfifo_fast state UP group default qlen <span class="m">1000</span>
-    link/ether <span class="m">52</span>:54:00:c6:38:28 brd ff:ff:ff:ff:ff:ff
-    inet <span class="m">172</span>.27.16.10/20 brd <span class="m">172</span>.27.31.255 scope global eth0</code></pre></td></tr></table>
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc pfifo_fast state UP group default qlen <span class="m">1000</span>
+    link/ether 52:54:00:c6:38:28 brd ff:ff:ff:ff:ff:ff
+    inet 172.27.16.10/20 brd 172.27.31.255 scope global eth0
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>我们可以从上例中看到：容器和宿主机具有相同的IP地址 <code>172.27.16.10</code></p>
-
+</div><p>我们可以从上例中看到：容器和宿主机具有相同的IP地址 <code>172.27.16.10</code></p>
 <p>在下图中，我们可以看到：当使用host模式网络时，容器实际上继承了宿主机的IP地址。该模式比bridge模式更快（因为没有路由开销），但是它将容器直接暴露在公共网络中，是有安全隐患的。</p>
-
 <p>{% asset_img host-mode.png host %}</p>
-
 <h2 id="container模式网络">container模式网络</h2>
-
 <p>该模式会重用另一个容器的网络命名空间。通常来说，当你想要自定义网络栈时，该模式是很有用的。实际上，该模式也是Kubernetes使用的网络模式。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -275,6 +257,7 @@ $ docker <span class="nb">exec</span> -it testnet bash
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
+</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"> $ docker run -dit --rm --net<span class="o">=</span>bridge --name<span class="o">=</span>testnet ubuntu:16.04 
@@ -282,13 +265,13 @@ $ docker <span class="nb">exec</span> -it testnet bash
  <span class="c1"># apt-get update</span>
 <span class="c1"># apt-get install iproute2</span>
 <span class="c1"># ip addr</span> 
-<span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="m">1</span>
-    link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
-    inet <span class="m">127</span>.0.0.1/8 scope host lo
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="m">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-<span class="m">290</span>: eth0@if291: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc noqueue state UP group default 
-    link/ether <span class="m">02</span>:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
-    inet <span class="m">172</span>.17.0.2/16 brd <span class="m">172</span>.17.255.255 scope global eth0
+290: eth0@if291: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
        valid_lft forever preferred_lft forever
 
 $ docker run -dit --rm --net<span class="o">=</span>container:testnet --name<span class="o">=</span>testnet2 ubuntu:16.04 
@@ -296,28 +279,25 @@ $ docker <span class="nb">exec</span> -it testnet2 bash
 <span class="c1"># apt-get update</span>
 <span class="c1"># apt-get install iproute2</span>
 <span class="c1"># ip addr</span> 
-<span class="m">1</span>: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="m">1</span>
-    link/loopback <span class="m">00</span>:00:00:00:00:00 brd <span class="m">00</span>:00:00:00:00:00
-    inet <span class="m">127</span>.0.0.1/8 scope host lo
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="m">1</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
-<span class="m">290</span>: eth0@if291: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc noqueue state UP group default 
-    link/ether <span class="m">02</span>:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
-    inet <span class="m">172</span>.17.0.2/16 brd <span class="m">172</span>.17.255.255 scope global eth0
-       valid_lft forever preferred_lft forever</code></pre></td></tr></table>
-</div>
-</div>
-<p>结果（上面的例子）显示：第二个容器使用了<code>--net=container</code> 参数，因此和第一个容器 <code>testnet</code>具有相同的IP地址<code>172.17.0.2</code>。</p>
+290: eth0@if291: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc noqueue state UP group default 
+    link/ether 02:42:ac:11:00:02 brd ff:ff:ff:ff:ff:ff link-netnsid <span class="m">0</span>
+    inet 172.17.0.2/16 brd 172.17.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
 
+</code></pre></td></tr></table>
+</div>
+</div><p>结果（上面的例子）显示：第二个容器使用了<code>--net=container</code> 参数，因此和第一个容器 <code>testnet</code>具有相同的IP地址<code>172.17.0.2</code>。</p>
 <h2 id="none模式网络">none模式网络</h2>
-
 <p>该模式将容器放置在它自己的网络栈中，但是并不进行任何配置。实际上，该模式关闭了容器的网络功能，在以下两种情况下是有用的：容器并不需要网络（例如只需要写磁盘卷的批处理任务）；你希望自定义网络，在第3章中有很多选项使用了该模式。</p>
-
 <h1 id="使用固定ip">使用固定IP</h1>
-
 <p>使用固定IP可以自己先创建一个 <code>bridge</code> 的网卡，然后启动的时候指定网卡和IP（默认的网卡不能指定IP启动）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -331,20 +311,18 @@ $ docker <span class="nb">exec</span> -it testnet2 bash
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">$  docker network create <span class="se">\
 </span><span class="se"></span>  --driver<span class="o">=</span>bridge <span class="se">\
-</span><span class="se"></span>  --subnet<span class="o">=</span><span class="m">172</span>.28.0.0/16 <span class="se">\
-</span><span class="se"></span>  --ip-range<span class="o">=</span><span class="m">172</span>.28.5.0/24 <span class="se">\
-</span><span class="se"></span>  --gateway<span class="o">=</span><span class="m">172</span>.28.5.254 <span class="se">\
+</span><span class="se"></span>  --subnet<span class="o">=</span>172.28.0.0/16 <span class="se">\
+</span><span class="se"></span>  --ip-range<span class="o">=</span>172.28.5.0/24 <span class="se">\
+</span><span class="se"></span>  --gateway<span class="o">=</span>172.28.5.254 <span class="se">\
 </span><span class="se"></span>  br0
 
 <span class="c1"># subnet 创建子网 ， ip-range IP地址池</span> 
 <span class="c1"># 172.28.0.0/16 地址范围是 172.28.0.1 到 172.28.255.254</span> 
-<span class="c1"># 172.28.5.0/24 地址范围是 172.28.5.1 到 172.28.5.254</span></code></pre></td></tr></table>
+<span class="c1"># 172.28.5.0/24 地址范围是 172.28.5.1 到 172.28.5.254</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>可以通过<a href="http://tool.chinaz.com/Tools/subnetmask">站长工具</a> 进行IP的计算</p>
-
+</div><p>可以通过<a href="http://tool.chinaz.com/Tools/subnetmask">站长工具</a> 进行IP的计算</p>
 <h1 id="参考资料">参考资料</h1>
-
 <ul>
 <li><a href="http://dockone.io/article/1261">Docker网络模式</a></li>
 </ul>
@@ -358,8 +336,8 @@ $ docker <span class="nb">exec</span> -it testnet2 bash
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2019-05-22
+        
     </span>
   </p>
   
@@ -389,7 +367,7 @@ $ docker <span class="nb">exec</span> -it testnet2 bash
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-03-26 14:04:58 \x2b0000 UTC',
+        id: '2018-03-26 14:04:58 \u002b0000 UTC',
         title: 'docker容器网络设置',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -435,7 +413,7 @@ $ docker <span class="nb">exec</span> -it testnet2 bash
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -459,7 +437,10 @@ $ docker <span class="nb">exec</span> -it testnet2 bash
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

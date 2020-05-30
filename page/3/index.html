@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/" />
@@ -36,7 +36,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,12 +45,9 @@
 <meta property="og:description" content="路在脚下，心向远方" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.jeffreysun.net/" />
-
 <meta property="og:updated_time" content="2019-09-01T21:51:54+08:00" />
 <meta itemprop="name" content="Jeffrey&#39;s blog">
-<meta itemprop="description" content="路在脚下，心向远方">
-
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="路在脚下，心向远方"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jeffrey&#39;s blog"/>
 <meta name="twitter:description" content="路在脚下，心向远方"/>
 
@@ -124,7 +122,7 @@
       <div class="post-category">
           <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
           </div>
-        <span class="more-meta"> 约 1463 字 </span>
+        <span class="more-meta"> 约 1464 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -132,7 +130,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="引言">引言</h1>
-
 <p>Docker采用<code>C/S</code>架构，包括客户端和服务端。Docker守护进程（Daemon）作为服务端接受来自客户端的请求，并处理这些请求（ 创建、 运行、 分发容器）。Docker从 0.5.2 之后使用本地Unix套接字机制强制代替了原先绑定在127.0.0.1 上的套接字，以加强服务端的防护。用户任然可以使用HTTP提供REST API 访问。建议使用安全机制，确保只有可行的网络或VPN，或证书保护机制（例如受保护的stunnel和ssl认证）下的访问可以进行。
 这里简单说明开启 REST API的过程。</p>
     </div>
@@ -173,7 +170,7 @@
       <div class="post-category">
           <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
           </div>
-        <span class="more-meta"> 约 1356 字 </span>
+        <span class="more-meta"> 约 1357 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -181,7 +178,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="引言">引言</h1>
-
 <p>docker 是一个非常方便的工具，在在使用过程中，需要使用一些网络相关的信息。找了一些资料，在这里做点笔记。</p>
     </div>
     <div class="read-more">
@@ -221,14 +217,14 @@
       <div class="post-category">
           <a href="/categories/%E7%B3%BB%E7%BB%9F/"> 系统 </a>
           </div>
-        <span class="more-meta"> 约 314 字 </span>
+        <span class="more-meta"> 约 316 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。 升级
+      Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 9 10 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。
     </div>
     <div class="read-more">
       <a href="/post/2018/03/20/ubuntu%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E6%9C%89%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%96%B0/" class="read-more-link">阅读更多</a>
@@ -252,7 +248,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h2 id="jenkins插件安装">jenkins插件安装</h2>
-
 <p>为了能够从xml中获取Unit test 的结果，可以安装 Publish Junit test result report 组件。使用时需要制定xml文件位置， 可以使用<code>*</code>进行匹配</p>
     </div>
     <div class="read-more">
@@ -269,7 +264,7 @@
       <div class="post-category">
           <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
           </div>
-        <span class="more-meta"> 约 368 字 </span>
+        <span class="more-meta"> 约 369 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
@@ -318,7 +313,7 @@
       <div class="post-category">
           <a href="/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
           </div>
-        <span class="more-meta"> 约 1089 字 </span>
+        <span class="more-meta"> 约 1079 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -326,20 +321,15 @@
   <div class="post-content">
     <div class="post-summary">
       <h2 id="环境介绍">环境介绍：</h2>
-
 <p>目标安装环境：Ubuntu 16.04.3 LTS
 JDK：1.8.0_151</p>
-
 <h2 id="安装方式">安装方式</h2>
-
-<h3 id="最简安装-网络畅通情况下">最简安装（网络畅通情况下）</h3>
-
+<h3 id="最简安装网络畅通情况下">最简安装（网络畅通情况下）</h3>
 <h4 id="安装软件">安装软件</h4>
-
 <h5 id="执行以下命令">执行以下命令：</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -348,7 +338,8 @@ JDK：1.8.0_151</p>
 <pre class="chroma"><code class="language-sh" data-lang="sh">wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key <span class="p">|</span> sudo apt-key add -
 sudo sh -c <span class="s1">&#39;echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list&#39;</span>
 sudo apt-get update
-sudo apt-get install jenkins</code></pre></td></tr></table>
+sudo apt-get install jenkins
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -377,14 +368,15 @@ sudo apt-get install jenkins</code></pre></td></tr></table>
       <h1 id="异常现象">异常现象</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain" data-lang="plain"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-plain" data-lang="plain">java.lang.UnsupportedOperationException: null
     at java.util.AbstractList.add(AbstractList.java:148) ~[?:1.8.0_45]
-    at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]</code></pre></td></tr></table>
+    at java.util.AbstractList.add(AbstractList.java:108) ~[?:1.8.0_45]
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -438,7 +430,7 @@ sudo apt-get install jenkins</code></pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -462,7 +454,10 @@ sudo apt-get install jenkins</code></pre></td></tr></table>
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

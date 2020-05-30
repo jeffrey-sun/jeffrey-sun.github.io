@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2018/07/26/centos-bash-%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%A8/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -43,19 +44,16 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2018/07/26/centos-bash-%E5%91%BD%E4%BB%A4%E8%A1%A5%E5%85%A8/" />
 <meta property="article:published_time" content="2018-07-26T11:11:29+00:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2019-05-22T10:34:12+08:00" />
 <meta itemprop="name" content="CentOS Bash 命令补全">
 <meta itemprop="description" content="背景 公司的服务器是最小安装的，平时上去敲命令，只有命令名称的补全，其他参数什么的补全都没有。简单的命令用着问题不是太大，复杂一点的特别是比较">
-
-
 <meta itemprop="datePublished" content="2018-07-26T11:11:29&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-22T10:34:12&#43;08:00" />
 <meta itemprop="wordCount" content="172">
 
 
 
-<meta itemprop="keywords" content="CentOS,Bash," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="CentOS,Bash," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS Bash 命令补全"/>
 <meta name="twitter:description" content="背景 公司的服务器是最小安装的，平时上去敲命令，只有命令名称的补全，其他参数什么的补全都没有。简单的命令用着问题不是太大，复杂一点的特别是比较"/>
 
@@ -141,37 +139,34 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#背景">背景</a></li>
-<li><a href="#安装命令">安装命令</a></li>
-<li><a href="#说明">说明</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#安装命令">安装命令</a></li>
+    <li><a href="#说明">说明</a></li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-22T10:34:12" title="May 22, 2019">May 22, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
-      
-
-<h2 id="背景">背景</h2>
-
+      <h2 id="背景">背景</h2>
 <p>公司的服务器是最小安装的，平时上去敲命令，只有命令名称的补全，其他参数什么的补全都没有。简单的命令用着问题不是太大，复杂一点的特别是比较长的对于手残的我来说就比较麻烦。于是就开始了 google的探寻方法之旅。 过了很久，闲一点就有了这个记录。</p>
-
 <h2 id="安装命令">安装命令</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">yum install bash-completion
-<span class="c1"># 安装完成后，退出 bash，重新登录即可</span></code></pre></td></tr></table>
+<span class="c1"># 安装完成后，退出 bash，重新登录即可</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h2 id="说明">说明</h2>
-
+</div><h2 id="说明">说明</h2>
 <p>本文命令节选自 <a href="https://jaminzhang.github.io/linux/CentOS-Bash-command-completion-enhanced-tool-bash-completion/">CentOS Bash 命令补全增强软件包 bash-completion</a></p>
 
     </div>
@@ -184,8 +179,8 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2019-05-22
+        
     </span>
   </p>
   
@@ -216,7 +211,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-07-26 11:11:29 \x2b0000 UTC',
+        id: '2018-07-26 11:11:29 \u002b0000 UTC',
         title: 'CentOS Bash 命令补全',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -262,7 +257,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -286,7 +281,10 @@
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

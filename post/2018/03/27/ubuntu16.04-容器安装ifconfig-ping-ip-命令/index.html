@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2018/03/27/ubuntu16.04-%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85ifconfig-ping-ip-%E5%91%BD%E4%BB%A4/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -43,19 +44,16 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2018/03/27/ubuntu16.04-%E5%AE%B9%E5%99%A8%E5%AE%89%E8%A3%85ifconfig-ping-ip-%E5%91%BD%E4%BB%A4/" />
 <meta property="article:published_time" content="2018-03-27T10:20:45+00:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2019-05-22T10:34:12+08:00" />
 <meta itemprop="name" content="ubuntu16.04 容器安装ifconfig ping ip 命令">
 <meta itemprop="description" content="进入容器，发现没有ifconfig ip ping 等命令。这里做一下记录 准备 更新一下缓存 1 apt-get update ifconfig 1 apt install net-tools ping 1 apt-get install iputils-ping ip 1 apt-get install iproute2">
-
-
 <meta itemprop="datePublished" content="2018-03-27T10:20:45&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-22T10:34:12&#43;08:00" />
 <meta itemprop="wordCount" content="56">
 
 
 
-<meta itemprop="keywords" content="ubuntu," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="ubuntu," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ubuntu16.04 容器安装ifconfig ping ip 命令"/>
 <meta name="twitter:description" content="进入容器，发现没有ifconfig ip ping 等命令。这里做一下记录 准备 更新一下缓存 1 apt-get update ifconfig 1 apt install net-tools ping 1 apt-get install iputils-ping ip 1 apt-get install iproute2"/>
 
@@ -140,55 +138,51 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#准备-更新一下缓存">准备 更新一下缓存</a></li>
-<li><a href="#ifconfig">ifconfig</a></li>
-<li><a href="#ping">ping</a></li>
-<li><a href="#ip">ip</a></li>
-</ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-22T10:34:12" title="May 22, 2019">May 22, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
-      
-
-<p>进入容器，发现没有ifconfig ip ping 等命令。这里做一下记录</p>
-
+      <p>进入容器，发现没有ifconfig ip ping 等命令。这里做一下记录</p>
 <h1 id="准备-更新一下缓存">准备 更新一下缓存</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"> apt-get update</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh"> apt-get update
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="ifconfig">ifconfig</h1>
+</div><h1 id="ifconfig">ifconfig</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"> apt install net-tools</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh"> apt install net-tools
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="ping">ping</h1>
+</div><h1 id="ping">ping</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"> apt-get install iputils-ping</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh"> apt-get install iputils-ping
+</code></pre></td></tr></table>
 </div>
-</div>
-<h1 id="ip">ip</h1>
+</div><h1 id="ip">ip</h1>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"> apt-get install iproute2</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh"> apt-get install iproute2
+</code></pre></td></tr></table>
 </div>
 </div>
     </div>
@@ -201,8 +195,8 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2019-05-22
+        
     </span>
   </p>
   
@@ -232,7 +226,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-03-27 10:20:45 \x2b0000 UTC',
+        id: '2018-03-27 10:20:45 \u002b0000 UTC',
         title: 'ubuntu16.04 容器安装ifconfig ping ip 命令',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -278,7 +272,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -302,7 +296,10 @@
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

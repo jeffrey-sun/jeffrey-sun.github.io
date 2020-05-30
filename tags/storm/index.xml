@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>storm on Jeffrey&#39;s blog</title>
@@ -18,7 +18,6 @@
       
       <guid>https://blog.jeffreysun.net/post/2017/11/09/jstorm%E4%B8%ADspout%E7%BB%84%E4%BB%B6%E5%90%9E%E5%90%90%E9%87%8F%E9%99%8D%E4%BD%8E/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;
-
 &lt;p&gt;正在负责运维的jstorm集群因为CPU消耗过高，又没有机器投入， 只能想办法优化Jstorm的逻辑。 大家都说序列化\反序列化比较消耗资源， 就想着批量性的序列化。 不懂背景的胡乱修改前人的代码就是一个深不见底的坑。&lt;/p&gt;</description>
     </item>
     

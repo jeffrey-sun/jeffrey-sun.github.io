@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2019/05/29/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" />
@@ -35,37 +35,32 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="Python字符串格式化" />
 <meta property="og:description" content="背景
-
 Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&quot; % var，最多，多加几个参数，或者加个str()处理一下。一直美誉深究，能用就好。
 前段时间刚好做了一个测试，想把字符串安装特定的格式输出，这样看过程更加方便点。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2019/05/29/python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96/" />
 <meta property="article:published_time" content="2019-05-29T15:43:59+08:00" />
-<meta property="article:modified_time" content="2019-09-25T23:12:41+08:00" />
+<meta property="article:modified_time" content="2019-05-29T15:43:59+08:00" />
 <meta itemprop="name" content="Python字符串格式化">
 <meta itemprop="description" content="背景
-
 Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&quot; % var，最多，多加几个参数，或者加个str()处理一下。一直美誉深究，能用就好。
 前段时间刚好做了一个测试，想把字符串安装特定的格式输出，这样看过程更加方便点。">
-
-
 <meta itemprop="datePublished" content="2019-05-29T15:43:59&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-25T23:12:41&#43;08:00" />
-<meta itemprop="wordCount" content="2044">
+<meta itemprop="dateModified" content="2019-05-29T15:43:59&#43;08:00" />
+<meta itemprop="wordCount" content="2048">
 
 
 
-<meta itemprop="keywords" content="Python," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Python," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python字符串格式化"/>
 <meta name="twitter:description" content="背景
-
 Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&quot; % var，最多，多加几个参数，或者加个str()处理一下。一直美誉深究，能用就好。
 前段时间刚好做了一个测试，想把字符串安装特定的格式输出，这样看过程更加方便点。"/>
 
@@ -142,7 +137,7 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
             <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
             <a href="/categories/python/"> Python </a>
             </div>
-          <span class="more-meta"> 约 2044 字 </span>
+          <span class="more-meta"> 约 2048 字 </span>
           <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -152,40 +147,40 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#背景">背景</a></li>
-<li><a href="#format方式格式化">Format方式格式化</a>
-<ul>
-<li><a href="#简单使用">简单使用</a></li>
-<li><a href="#格式控制信息">格式控制信息</a></li>
-</ul></li>
-<li><a href="#操作符">%操作符</a>
-<ul>
-<li><a href="#模版">模版</a></li>
-<li><a href="#格式符">格式符</a></li>
-</ul></li>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#背景">背景</a></li>
+    <li><a href="#format方式格式化">Format方式格式化</a>
+      <ul>
+        <li><a href="#简单使用">简单使用</a></li>
+        <li><a href="#格式控制信息">格式控制信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#操作符">%操作符</a>
+      <ul>
+        <li><a href="#模版">模版</a></li>
+        <li><a href="#格式符">格式符</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-29T15:43:59" title="May 29, 2019">May 29, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h2 id="背景">背景</h2>
-
 <p>Pyton用了一段时间了，对字符串的格式化最多用的就是<code>&quot;%s&quot; % var</code>，最多，多加几个参数，或者加个<code>str()</code>处理一下。一直美誉深究，能用就好。
 前段时间刚好做了一个测试，想把字符串安装特定的格式输出，这样看过程更加方便点。</p>
-
 <h2 id="format方式格式化">Format方式格式化</h2>
-
 <h3 id="简单使用">简单使用</h3>
-
 <p>基本用法是 “字符串模版”.format(&lt;逗号分隔的参数&gt;)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -218,15 +213,13 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 <span class="s1">&#39;我们来用{0}{{0}}{0}{{1}}，{1}{{0}}{1}{{1}}造句&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;一时&#39;</span><span class="p">,</span><span class="s1">&#39;一直&#39;</span><span class="p">)</span>
 <span class="c1">#out: &#39;我们来用一时{0}一时{1}，一直{0}一直{1}造句&#39;</span>
 <span class="s1">&#39;我们来用{0}{{0}}{0}{{1}}，{1}{{0}}{1}{{1}}造句&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;一时&#39;</span><span class="p">,</span><span class="s1">&#39;一直&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;偷懒&#39;</span><span class="p">,</span><span class="s1">&#39;爽&#39;</span><span class="p">)</span>
-<span class="c1">#out: &#39;我们来用一时偷懒一时爽，一直偷懒一直爽造句&#39;</span></code></pre></td></tr></table>
+<span class="c1">#out: &#39;我们来用一时偷懒一时爽，一直偷懒一直爽造句&#39;</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<h3 id="格式控制信息">格式控制信息</h3>
-
-<p>format()方法中&lt;模板字符串&gt;的槽除了包括参数序号，还可以包括格式控制信息。此时，槽的内部样式如下：<br />
+</div><h3 id="格式控制信息">格式控制信息</h3>
+<p>format()方法中&lt;模板字符串&gt;的槽除了包括参数序号，还可以包括格式控制信息。此时，槽的内部样式如下：<br>
  <code>{&lt;参数序号&gt;: &lt;格式控制标记&gt;}</code>
 其中，&lt;格式控制标记&gt;用来控制参数显示时的格式，包括：&lt;填充&gt;&lt;对齐&gt;&lt;宽度&gt;,&lt;.精度&gt;&lt;类型&gt;6 个字段，这些字段都是可选的，可以组合使用，逐一介绍如下。</p>
-
 <table>
 <thead>
 <tr>
@@ -238,7 +231,6 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 <th align="left">&lt;类别&gt;</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">用于填充的单个字符</td>
@@ -252,7 +244,7 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 </table>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt"> 1
+<pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -300,9 +292,12 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;PYTHON&#34;</span>
+<pre class="chroma"><code class="language-python" data-lang="python">
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;PYTHON&#34;</span>
 
 <span class="s2">&#34;{0:30}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="c1"># out: &#39;PYTHON                        &#39;</span>
@@ -349,51 +344,50 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 <span class="c1"># out: &#39;3.140000e+00,3.140000E+00,3.140000,314.000000%&#39;</span>
 
 <span class="s2">&#34;{0:.2e},{0:.2E},{0:.2f},{0:.2%}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
-<span class="c1"># out: &#39;3.14e+00,3.14E+00,3.14,314.00%&#39;</span></code></pre></td></tr></table>
-</div>
-</div>
-<h2 id="操作符">%操作符</h2>
+<span class="c1"># out: &#39;3.14e+00,3.14E+00,3.14,314.00%&#39;</span>
 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="操作符">%操作符</h2>
 <h3 id="模版">模版</h3>
-
 <p>格式化字符串时，Python使用一个字符串作为模板。模板中有格式符，这些格式符为真实值预留位置，并说明真实数值应该呈现的格式。Python用一个tuple将多个值传递给模板，每个值对应一个格式符。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;I&#39;m </span><span class="si">%s</span><span class="s2">. I&#39;m </span><span class="si">%d</span><span class="s2"> year old&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Vamei&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">))</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;I&#39;m </span><span class="si">%s</span><span class="s2">. I&#39;m </span><span class="si">%d</span><span class="s2"> year old&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Vamei&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">))</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p><code>&quot;I'm %s. I'm %d year old&quot;</code> 为我们的模板。<code>%s</code>为第一个格式符，表示一个字符串。<code>%d</code>为第二个格式符，表示一个整数。<code>('Vamei', 99)</code>的两个元素<code>'Vamei'</code>和99为替换<code>%s</code>和<code>%d</code>的真实值。
+</div><p><code>&quot;I'm %s. I'm %d year old&quot;</code> 为我们的模板。<code>%s</code>为第一个格式符，表示一个字符串。<code>%d</code>为第二个格式符，表示一个整数。<code>('Vamei', 99)</code>的两个元素<code>'Vamei'</code>和99为替换<code>%s</code>和<code>%d</code>的真实值。
 在模板和<code>tuple</code>之间，有一个<code>%</code>号分隔，它代表了格式化操作。</p>
-
 <p>整个<code>&quot;I'm %s. I'm %d year old&quot; % ('Vamei', 99)</code> 实际上构成一个字符串表达式。我们可以像一个正常的字符串那样，将它赋值给某个变量。比如:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;I&#39;m </span><span class="si">%s</span><span class="s2">. I&#39;m </span><span class="si">%d</span><span class="s2"> year old&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Vamei&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-python" data-lang="python">
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;I&#39;m </span><span class="si">%s</span><span class="s2">. I&#39;m </span><span class="si">%d</span><span class="s2"> year old&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;Vamei&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>我们还可以用词典来传递真实值。如下：</p>
+</div><p>我们还可以用词典来传递真实值。如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;I&#39;m </span><span class="si">%(name)s</span><span class="s2">. I&#39;m </span><span class="si">%(age)d</span><span class="s2"> year old&#34;</span> <span class="o">%</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Vamei&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">99</span><span class="p">})</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;I&#39;m </span><span class="si">%(name)s</span><span class="s2">. I&#39;m </span><span class="si">%(age)d</span><span class="s2"> year old&#34;</span> <span class="o">%</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Vamei&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">99</span><span class="p">})</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>可以看到，我们对两个格式符进行了命名。命名使用()括起来。每个命名对应词典的一个key。</p>
-
+</div><p>可以看到，我们对两个格式符进行了命名。命名使用()括起来。每个命名对应词典的一个key。</p>
 <h3 id="格式符">格式符</h3>
-
 <p>格式符为真实值预留位置，并控制显示的格式。格式符可以包含有一个类型码，用以控制显示的类型，如下:</p>
-
 <table>
 <thead>
 <tr>
@@ -401,123 +395,99 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
 <th align="left">说明</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="left">%s</td>
 <td align="left">字符串 (采用str()的显示)</td>
 </tr>
-
 <tr>
 <td align="left">%r</td>
 <td align="left">字符串 (采用repr()的显示)</td>
 </tr>
-
 <tr>
 <td align="left">%c</td>
 <td align="left">单个字符</td>
 </tr>
-
 <tr>
 <td align="left">%b</td>
 <td align="left">二进制整数</td>
 </tr>
-
 <tr>
 <td align="left">%d</td>
 <td align="left">十进制整数</td>
 </tr>
-
 <tr>
 <td align="left">%i</td>
 <td align="left">十进制整数</td>
 </tr>
-
 <tr>
 <td align="left">%o</td>
 <td align="left">八进制整数</td>
 </tr>
-
 <tr>
 <td align="left">%x</td>
 <td align="left">十六进制整数</td>
 </tr>
-
 <tr>
 <td align="left">%e</td>
 <td align="left">指数 (基底写为e)</td>
 </tr>
-
 <tr>
 <td align="left">%E</td>
 <td align="left">指数 (基底写为E)</td>
 </tr>
-
 <tr>
 <td align="left">%f</td>
 <td align="left">浮点数</td>
 </tr>
-
 <tr>
 <td align="left">%F</td>
 <td align="left">浮点数，与上相同</td>
 </tr>
-
 <tr>
 <td align="left">%g</td>
 <td align="left">指数(e)或浮点数 (根据显示长度)</td>
 </tr>
-
 <tr>
 <td align="left">%G</td>
 <td align="left">指数(E)或浮点数 (根据显示长度)</td>
 </tr>
-
 <tr>
 <td align="left">%%</td>
 <td align="left">字符&rdquo;%&rdquo;</td>
 </tr>
 </tbody>
 </table>
-
 <p>可以用如下的方式，对格式进行进一步的控制：</p>
-
 <p><code>%[(name)][flags][width].[precision]typecode</code></p>
-
 <p><code>(name)</code>为命名</p>
-
 <p><code>flags</code>可以有<code>+</code>,<code>-</code>,<code>' '</code>或<code>0</code>。<code>+</code>表示右对齐。<code>-</code>表示左对齐。<code>' '</code>为一个空格，表示在正数的左侧填充一个空格，从而与负数对齐。<code>0</code>表示使用0填充。</p>
-
 <p><code>width</code>表示显示宽度</p>
-
 <p><code>precision</code>表示小数点后精度</p>
-
 <p>比如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-py" data-lang="py"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-py" data-lang="py"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%+10x</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%04d</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="mi">5</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%6.3f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="mf">2.3</span><span class="p">)</span></code></pre></td></tr></table>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%6.3f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="mf">2.3</span><span class="p">)</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>上面的<code>width</code>, <code>precision</code>为两个整数。我们可以利用<code>*</code>，来动态代入这两个量。比如：</p>
+</div><p>上面的<code>width</code>, <code>precision</code>为两个整数。我们可以利用<code>*</code>，来动态代入这两个量。比如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-py" data-lang="py"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-py" data-lang="py"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%.*f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">))</span></code></pre></td></tr></table>
+<pre class="chroma"><code class="language-py" data-lang="py"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%.*f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">))</span>
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>Python实际上用4来替换*。所以实际的模板为<code>&quot;%.4f&quot;</code>。</p>
-
+</div><p>Python实际上用4来替换*。所以实际的模板为<code>&quot;%.4f&quot;</code>。</p>
 <h2 id="参考">参考</h2>
-
 <ol>
 <li><a href="https://blog.csdn.net/sinat_28981497/article/details/69218893">https://blog.csdn.net/sinat_28981497/article/details/69218893</a></li>
 <li><a href="https://www.cnblogs.com/vamei/archive/2013/03/12/2954938.html">https://www.cnblogs.com/vamei/archive/2013/03/12/2954938.html</a></li>
@@ -533,8 +503,8 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-09-25
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/54f451106dd23fa519023c8af1d49ca3a26ecb30" title="修改Python目录下的文章格式规范问题 添加 python编码问题草稿">(54f4511)</a>
+        2019-05-29
+        
     </span>
   </p>
   
@@ -564,7 +534,7 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-05-29 15:43:59 \x2b0800 CST',
+        id: '2019-05-29 15:43:59 \u002b0800 CST',
         title: 'Python字符串格式化',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -610,7 +580,7 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -634,7 +604,10 @@ Pyton用了一段时间了，对字符串的格式化最多用的就是&quot;%s&
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

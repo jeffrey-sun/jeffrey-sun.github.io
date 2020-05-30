@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2018/03/13/docker%E8%AE%BE%E7%BD%AE/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,22 +47,19 @@ docker镜像加速
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2018/03/13/docker%E8%AE%BE%E7%BD%AE/" />
 <meta property="article:published_time" content="2018-03-13T20:57:17+00:00" />
-<meta property="article:modified_time" content="2019-07-02T23:41:39+08:00" />
+<meta property="article:modified_time" content="2018-03-13T20:57:17+00:00" />
 <meta itemprop="name" content="docker设置">
 <meta itemprop="description" content="
 docker代理设置
 docker镜像加速
 ">
-
-
 <meta itemprop="datePublished" content="2018-03-13T20:57:17&#43;00:00" />
-<meta itemprop="dateModified" content="2019-07-02T23:41:39&#43;08:00" />
-<meta itemprop="wordCount" content="368">
+<meta itemprop="dateModified" content="2018-03-13T20:57:17&#43;00:00" />
+<meta itemprop="wordCount" content="369">
 
 
 
-<meta itemprop="keywords" content="docker," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="docker设置"/>
 <meta name="twitter:description" content="
 docker代理设置
@@ -140,7 +138,7 @@ docker镜像加速
         <div class="post-category">
             <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
             </div>
-          <span class="more-meta"> 约 368 字 </span>
+          <span class="more-meta"> 约 369 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -150,132 +148,132 @@ docker镜像加速
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#docker代理设置">docker代理设置</a>
-<ul>
-<li><a href="#镜像的代理设置">镜像的代理设置</a></li>
-<li><a href="#ubuntu-dockerfile-build-apt-get代理设置">ubuntu dockerfile build apt-get代理设置</a></li>
-</ul></li>
-<li><a href="#镜像加速">镜像加速</a>
-<ul>
-<li><a href="#macos-设置">MacOS 设置</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#docker代理设置">docker代理设置</a>
+      <ul>
+        <li><a href="#镜像的代理设置">镜像的代理设置</a></li>
+        <li><a href="#ubuntu-dockerfile-build-apt-get代理设置">ubuntu dockerfile build apt-get代理设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#镜像加速">镜像加速</a>
+      <ul>
+        <li><a href="#macos-设置">MacOS 设置</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2018-03-13T20:57:17" title="March 13, 2018">March 13, 2018</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <ol>
 <li>docker代理设置</li>
 <li>docker镜像加速</li>
 </ol>
-
 <h2 id="docker代理设置">docker代理设置</h2>
-
 <p>docker代理设置分为两类：</p>
-
 <ol>
 <li>镜像的代理设置</li>
 <li>build代理设置</li>
 </ol>
-
 <h3 id="镜像的代理设置">镜像的代理设置</h3>
-
 <ol>
-<li><p>默认情况下这个配置文件夹并不存在，创建配置文件夹。</p>
+<li>默认情况下这个配置文件夹并不存在，创建配置文件夹。</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">mkdir -p /etc/systemd/system/docker.service.d</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-sh" data-lang="sh">mkdir -p /etc/systemd/system/docker.service.d
+</code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>创建文件<code>/etc/systemd/system/docker.service.d/http-proxy.conf</code>,包含有<code>HTTP_PROXY</code>环境变量</p>
+</div><ol>
+<li>创建文件<code>/etc/systemd/system/docker.service.d/http-proxy.conf</code>,包含有<code>HTTP_PROXY</code>环境变量</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-plain text" data-lang="plain text"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-plain text" data-lang="plain text">[Service]
+<pre class="chroma"><code class="language-plain" data-lang="plain">[Service]
 Environment=&#34;HTTP_PROXY=http://proxy.example.com:80/&#34;
 Environment=&#34;HTTPS_PROXY=https://proxy.example.com:80/&#34;
-Environment=&#34;NO_PROXY=localhost,127.0.0.1,daocloud.io&#34;</code></pre></td></tr></table>
+Environment=&#34;NO_PROXY=localhost,127.0.0.1,daocloud.io&#34;
+</code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>刷新systemd配置:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl daemon-reload</code></pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>用系统命令验证环境变量:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">systemctl show --property<span class="o">=</span>Environment docker</code></pre></td></tr></table>
-</div>
-</div></li>
-
-<li><p>重启docker</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl restart docker </code></pre></td></tr></table>
-</div>
-</div></li>
+</div><ol start="3">
+<li>刷新systemd配置:</li>
 </ol>
-
-<h3 id="ubuntu-dockerfile-build-apt-get代理设置">ubuntu dockerfile build apt-get代理设置</h3>
-
-<ol>
-<li><p>新建文件 <code>apt.conf</code>， 文件内容如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl daemon-reload
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>用系统命令验证环境变量:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">systemctl show --property<span class="o">=</span>Environment docker
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>重启docker</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sh" data-lang="sh">sudo systemctl restart docker 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="ubuntu-dockerfile-build-apt-get代理设置">ubuntu dockerfile build apt-get代理设置</h3>
+<ol>
+<li>新建文件 <code>apt.conf</code>， 文件内容如下：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">Acquire::http::proxy <span class="s2">&#34;http://127.0.0.1:8080/&#34;</span><span class="p">;</span>
-Acquire::https::proxy <span class="s2">&#34;http://127.0.0.1:8080/&#34;</span><span class="p">;</span></code></pre></td></tr></table>
+Acquire::https::proxy <span class="s2">&#34;http://127.0.0.1:8080/&#34;</span><span class="p">;</span>
+
+</code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>在<code>RUN apt-get</code> 命令前加上 <code>COPY apt.conf /etc/apt/apt.conf</code></p></li>
+</div><ol start="2">
+<li>在<code>RUN apt-get</code> 命令前加上 <code>COPY apt.conf /etc/apt/apt.conf</code></li>
 </ol>
-
 <p>其他系统的类似，遇到再添加</p>
-
 <h2 id="镜像加速">镜像加速</h2>
-
 <h3 id="macos-设置">MacOS 设置</h3>
-
 <p>右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Daemon 标签（Docker 17.03 之前版本为 Advanced 标签）下的 Registry mirrors 列表中加入下面的镜像地址:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text"><span class="lnt">1
+<pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">http://f1361db2.m.daocloud.io</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-text" data-lang="text">http://f1361db2.m.daocloud.io
+</code></pre></td></tr></table>
 </div>
-</div>
-<p>点击 Apply &amp; Restart 按钮使设置生效。</p>
+</div><p>点击 Apply &amp; Restart 按钮使设置生效。</p>
     </div>
 
     <div class="post-copyright">
@@ -286,8 +284,8 @@ Acquire::https::proxy <span class="s2">&#34;http://127.0.0.1:8080/&#34;</span><s
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-07-02
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/7e8e93b861206623b95cb3a6aaf94a999a09faad" title="add rabbitmq">(7e8e93b)</a>
+        2018-03-13
+        
     </span>
   </p>
   
@@ -317,7 +315,7 @@ Acquire::https::proxy <span class="s2">&#34;http://127.0.0.1:8080/&#34;</span><s
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2018-03-13 20:57:17 \x2b0000 UTC',
+        id: '2018-03-13 20:57:17 \u002b0000 UTC',
         title: 'docker设置',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -363,7 +361,7 @@ Acquire::https::proxy <span class="s2">&#34;http://127.0.0.1:8080/&#34;</span><s
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -387,7 +385,10 @@ Acquire::https::proxy <span class="s2">&#34;http://127.0.0.1:8080/&#34;</span><s
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

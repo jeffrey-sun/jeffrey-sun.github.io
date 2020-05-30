@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/" />
@@ -36,7 +36,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,12 +45,9 @@
 <meta property="og:description" content="路在脚下，心向远方" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://blog.jeffreysun.net/" />
-
 <meta property="og:updated_time" content="2019-09-01T21:51:54+08:00" />
 <meta itemprop="name" content="Jeffrey&#39;s blog">
-<meta itemprop="description" content="路在脚下，心向远方">
-
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="路在脚下，心向远方"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jeffrey&#39;s blog"/>
 <meta name="twitter:description" content="路在脚下，心向远方"/>
 
@@ -125,7 +123,7 @@
           <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
           <a href="/categories/%E6%9D%82%E9%A1%B9/"> 杂项 </a>
           </div>
-        <span class="more-meta"> 约 6215 字 </span>
+        <span class="more-meta"> 约 6190 字 </span>
         <span class="more-meta"> 预计阅读 13 分钟 </span>
     </div>
   </header>
@@ -133,9 +131,7 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>在工作中，遇到一个要写agent的场景，因为agent具有一定的执行能，且由控制端发起，因此就需要考虑安全问题。因为代码需要部署到客户机器上，简单使用对称加密不安全，主要是担心密钥不安全。因此选用了 SSL/TLS 协议。 使用的python有库可以选用，因此，最大的工作量还是 证书的生成。</p>
-
 <p>找到 一个比较全的资料<a href="http://blog.csdn.net/howeverpf/article/details/21622545">如何使用OpenSSL工具生成根证书与应用证书</a>，在此留档，以供参考。</p>
     </div>
     <div class="read-more">
@@ -177,7 +173,7 @@
           <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
           <a href="/categories/java/"> Java </a>
           </div>
-        <span class="more-meta"> 约 2109 字 </span>
+        <span class="more-meta"> 约 2081 字 </span>
         <span class="more-meta"> 预计阅读 5 分钟 </span>
     </div>
   </header>
@@ -185,7 +181,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>在java编程过程中，经常会使用 try catch语句来处理异常，对打开了资源的文件的，要使用finally进行关闭。
 正常的执行顺序是 try块，如果没有异常执行finally块，有异常跳转到catch块，最后执行finally块。 刚好遇到一个try catch 带有finally的语句，还使用了return。于是，就想到了语句执行情况的问题。</p>
     </div>
@@ -203,7 +198,7 @@
       <div class="post-category">
           <a href="/categories/%E5%B7%A5%E5%85%B7/"> 工具 </a>
           </div>
-        <span class="more-meta"> 约 224 字 </span>
+        <span class="more-meta"> 约 225 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
@@ -211,7 +206,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>在写博客的时候，没有注意，把公司的邮箱用户名什么的都弄在了提交记录里面，虽然也没有什么， 就是看着不爽了。 于是就想着折腾一把。</p>
     </div>
     <div class="read-more">
@@ -229,7 +223,7 @@
           <a href="/categories/%E7%BC%96%E7%A0%81/"> 编码 </a>
           <a href="/categories/java/"> Java </a>
           </div>
-        <span class="more-meta"> 约 582 字 </span>
+        <span class="more-meta"> 约 579 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
@@ -237,7 +231,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>正在负责运维的jstorm集群因为CPU消耗过高，又没有机器投入， 只能想办法优化Jstorm的逻辑。 大家都说序列化\反序列化比较消耗资源， 就想着批量性的序列化。 不懂背景的胡乱修改前人的代码就是一个深不见底的坑。</p>
     </div>
     <div class="read-more">
@@ -262,7 +255,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>感觉自己比较啰嗦，什么时候总想交代一下缘由。
 故事的的开始是，我在使用 hexo 的时候， 想用git 做一下版本管理。为了主题能够方便升级（也许我以后一直不会升级的）， 直接clone了原始库。做完自己的配置后，回不到原始库就推到了<a href="gitee.com">码云</a> 上了。为什么要退到码云上，是因为它可以建免费的私有项目，我又没有自己的网络主机。之后问题就出来了，我有两个库，一个是文章的，一个是主题加主题配置的，怎么管理。</p>
     </div>
@@ -288,7 +280,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>git 的中文乱码问题一直困扰着我，当然新本的git客户端（2.15.0）安装完后，提交日志什么的基本没有什么乱码问题。只是在显示中文路径名的时候会有问题。我本机的表现为显示一串数字。</p>
     </div>
     <div class="read-more">
@@ -313,7 +304,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="背景">背景</h1>
-
 <p>昨天晚上在开看网页的时候，突然弹出一个提示框说：IDEA的内存溢出了，要不要关闭程序啊。看了一眼物理内存，发现还有一些啊，虽然我开的网页比较多，16G的内存用了85%，这样的情况也不至于报内存溢出的。</p>
     </div>
     <div class="read-more">
@@ -338,7 +328,6 @@
   <div class="post-content">
     <div class="post-summary">
       <h1 id="故事背景">故事背景</h1>
-
 <p>在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过<code>$(formName).data(&quot;bootstrapValidator&quot;)</code>获取到对象，进行相应的验证操作。但是在重新执行<code>render</code>函数进行渲染的时候，就会报错。于是纠结很久。</p>
     </div>
     <div class="read-more">
@@ -415,7 +404,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -439,7 +428,10 @@
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

@@ -24,7 +24,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2017/10/17/form%E5%B5%8C%E5%A5%97form%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/" />
@@ -35,35 +35,30 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="form嵌套form导致的问题" />
 <meta property="og:description" content="故事背景
-
 在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过$(formName).data(&quot;bootstrapValidator&quot;)获取到对象，进行相应的验证操作。但是在重新执行render函数进行渲染的时候，就会报错。于是纠结很久。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2017/10/17/form%E5%B5%8C%E5%A5%97form%E5%AF%BC%E8%87%B4%E7%9A%84%E9%97%AE%E9%A2%98/" />
 <meta property="article:published_time" content="2017-10-17T09:45:00+00:00" />
-<meta property="article:modified_time" content="2019-05-26T13:32:15+08:00" />
+<meta property="article:modified_time" content="2019-05-22T10:34:12+08:00" />
 <meta itemprop="name" content="form嵌套form导致的问题">
 <meta itemprop="description" content="故事背景
-
 在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过$(formName).data(&quot;bootstrapValidator&quot;)获取到对象，进行相应的验证操作。但是在重新执行render函数进行渲染的时候，就会报错。于是纠结很久。">
-
-
 <meta itemprop="datePublished" content="2017-10-17T09:45:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-05-26T13:32:15&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-22T10:34:12&#43;08:00" />
 <meta itemprop="wordCount" content="444">
 
 
 
-<meta itemprop="keywords" content="web," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="web," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="form嵌套form导致的问题"/>
 <meta name="twitter:description" content="故事背景
-
 在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过$(formName).data(&quot;bootstrapValidator&quot;)获取到对象，进行相应的验证操作。但是在重新执行render函数进行渲染的时候，就会报错。于是纠结很久。"/>
 
 <!--[if lte IE 9]>
@@ -147,21 +142,18 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#故事背景">故事背景</a></li>
-<li><a href="#原因发现">原因发现</a></li>
-</ul>
-</nav>
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="warn">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-05-22T10:34:12" title="May 22, 2019">May 22, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
       <h1 id="故事背景">故事背景</h1>
-
 <p>在使用 bootstrapvalidator的时候，backbone第一次渲染页面能够获通过<code>$(formName).data(&quot;bootstrapValidator&quot;)</code>获取到对象，进行相应的验证操作。但是在重新执行<code>render</code>函数进行渲染的时候，就会报错。于是纠结很久。</p>
-
 <h1 id="原因发现">原因发现</h1>
-
 <p>在我自己找很久，其中尝试过程不表。终于在同事的帮助下发现一个问题，就是内层的<code>form</code>元素不存在，jQurey 找不到元素而报错。 当时就很诧异，因为我的 <code>form</code>元素是写在 模版里面的，怎么会没有了。如果都没有就算了，为什么第一次render有，后面的就没有了。 单步调试执行后，根据我那浅薄的前台知识，应该是第一次render执行时，view的el还在内存里面，没有和上层的form产生关联， 直接使用 html() 函数就加载到了页面上，而后面的render执行时，view的el已经在页面的dom tree 里面，就有 form不能嵌套的问题。具体的应该是在 html()函数中，当然这个没有单步调试，结论不一定准确。</p>
     </div>
 
@@ -173,8 +165,8 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-05-26
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/3c76b59cfd65c99f88db2eb076b1369cb0edf955" title="change dir">(3c76b59)</a>
+        2019-05-22
+        
     </span>
   </p>
   
@@ -204,7 +196,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2017-10-17 09:45:00 \x2b0000 UTC',
+        id: '2017-10-17 09:45:00 \u002b0000 UTC',
         title: 'form嵌套form导致的问题',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -250,7 +242,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -274,7 +266,10 @@
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.1 with theme even" />
+<meta name="generator" content="Hugo 0.71.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.jeffreysun.net/post/2019/07/02/python-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.78f8f17bab244b9ee62ad16480c9584d5fc2db06ae20681d1ca225cefd80767c.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -43,19 +44,16 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.jeffreysun.net/post/2019/07/02/python-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" />
 <meta property="article:published_time" content="2019-07-02T21:42:49+08:00" />
-<meta property="article:modified_time" content="2019-09-01T22:56:24+08:00" />
+<meta property="article:modified_time" content="2019-07-02T21:42:49+08:00" />
 <meta itemprop="name" content="Python 最佳实践">
 <meta itemprop="description" content="目录结构 Python 开发环境(4%) 写出优雅的Python代码(8%) Python应用的场景指南(8%) 部署优雅的Python代码(70%) 网络应用(">
-
-
 <meta itemprop="datePublished" content="2019-07-02T21:42:49&#43;08:00" />
-<meta itemprop="dateModified" content="2019-09-01T22:56:24&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-02T21:42:49&#43;08:00" />
 <meta itemprop="wordCount" content="437">
 
 
 
-<meta itemprop="keywords" content="Note," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="Note," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python 最佳实践"/>
 <meta name="twitter:description" content="目录结构 Python 开发环境(4%) 写出优雅的Python代码(8%) Python应用的场景指南(8%) 部署优雅的Python代码(70%) 网络应用("/>
 
@@ -142,94 +140,96 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#目录结构">目录结构</a></li>
-<li><a href="#笔记">笔记</a>
-<ul>
-<li><a href="#命令行应用">命令行应用</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#目录结构">目录结构</a></li>
+    <li><a href="#笔记">笔记</a>
+      <ul>
+        <li><a href="#命令行应用">命令行应用</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2019-07-02T21:42:49" title="July 2, 2019">July 2, 2019</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
     <div class="post-content">
-      
-
-<h2 id="目录结构">目录结构</h2>
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Python 开发环境(4%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 写出优雅的Python代码(8%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Python应用的场景指南(8%)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 部署优雅的Python代码(70%)
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 网络应用(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> HTTP
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Requests</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 分布式系统
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> ZeroMQ</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> RabbitMQ</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Web 应用 &amp; 框架(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Context</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 框架
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Django(仅大致了解)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Flask(学习完基础部分)</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Web 服务端
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Nginx</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> WSGI 服务器
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Gunicorn</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Waitress</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 服务端最佳实践</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> Hosting</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 模板
-
-<ul class="task-list">
-<li><label><input type="checkbox" checked disabled class="task-list-item"> Jinja2</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 命令行应用(5%)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> GUI应用(跳过)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 数据库(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 网络(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 系统管理(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 持续集成(5%)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 速度(5%)(跳过)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 科学应用(跳过)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 图像处理(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 数据序列化(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> XML解析(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> JSON(5%)</label></li>
-<li><label><input type="checkbox" checked disabled class="task-list-item"> 密码学(5%)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 机器学习(跳过)</label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> C语言外部函数接口(CFFI)(5%)</label></li>
-</ul></label></li>
-<li><label><input type="checkbox" disabled class="task-list-item"> 额外关注(10%)</label></li>
+      <h2 id="目录结构">目录结构</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Python 开发环境(4%)</li>
+<li><input checked="" disabled="" type="checkbox"> 写出优雅的Python代码(8%)</li>
+<li><input checked="" disabled="" type="checkbox"> Python应用的场景指南(8%)</li>
+<li><input disabled="" type="checkbox"> 部署优雅的Python代码(70%)
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 网络应用(5%)
+<ul>
+<li><input checked="" disabled="" type="checkbox"> HTTP
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Requests</li>
 </ul>
-
+</li>
+<li><input checked="" disabled="" type="checkbox"> 分布式系统
+<ul>
+<li><input checked="" disabled="" type="checkbox"> ZeroMQ</li>
+<li><input checked="" disabled="" type="checkbox"> RabbitMQ</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Web 应用 &amp; 框架(5%)
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Context</li>
+<li><input checked="" disabled="" type="checkbox"> 框架
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Django(仅大致了解)</li>
+<li><input checked="" disabled="" type="checkbox"> Flask(学习完基础部分)</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> Web 服务端
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Nginx</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> WSGI 服务器
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Gunicorn</li>
+<li><input disabled="" type="checkbox"> Waitress</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 服务端最佳实践</li>
+<li><input disabled="" type="checkbox"> Hosting</li>
+<li><input checked="" disabled="" type="checkbox"> 模板
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Jinja2</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input checked="" disabled="" type="checkbox"> 命令行应用(5%)</li>
+<li><input disabled="" type="checkbox"> GUI应用(跳过)</li>
+<li><input checked="" disabled="" type="checkbox"> 数据库(5%)</li>
+<li><input checked="" disabled="" type="checkbox"> 网络(5%)</li>
+<li><input checked="" disabled="" type="checkbox"> 系统管理(5%)</li>
+<li><input checked="" disabled="" type="checkbox"> 持续集成(5%)</li>
+<li><input disabled="" type="checkbox"> 速度(5%)(跳过)</li>
+<li><input disabled="" type="checkbox"> 科学应用(跳过)</li>
+<li><input checked="" disabled="" type="checkbox"> 图像处理(5%)</li>
+<li><input checked="" disabled="" type="checkbox"> 数据序列化(5%)</li>
+<li><input checked="" disabled="" type="checkbox"> XML解析(5%)</li>
+<li><input checked="" disabled="" type="checkbox"> JSON(5%)</li>
+<li><input checked="" disabled="" type="checkbox"> 密码学(5%)</li>
+<li><input disabled="" type="checkbox"> 机器学习(跳过)</li>
+<li><input disabled="" type="checkbox"> C语言外部函数接口(CFFI)(5%)</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 额外关注(10%)</li>
+</ul>
 <h2 id="笔记">笔记</h2>
-
 <h3 id="命令行应用">命令行应用</h3>
-
 <p>命令行库简单分析：</p>
-
 <ul>
 <li>Clint 最新支持 python 3.4， 目前库开发人员已经将仓库存档，后续不再维护，可以跳过</li>
 <li>Click 通过装饰器完成，使用时代码配置非常少，简单应用推荐</li>
@@ -246,8 +246,8 @@
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-09-01
-        <a href="https://git.coding.net/jeffreysun/jeffreysun.git/commit/801ce78b1edc09d35a02aab0146ffeca465673a5" title="add learn shell">(801ce78)</a>
+        2019-07-02
+        
     </span>
   </p>
   
@@ -277,7 +277,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-07-02 21:42:49 \x2b0800 CST',
+        id: '2019-07-02 21:42:49 \u002b0800 CST',
         title: 'Python 最佳实践',
         clientID: '887bf4b960bf0fb66e89',
         clientSecret: 'b80432ba9b4875f0193ebcb5c5872a0f38ed2389',
@@ -323,7 +323,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2019
+    2020
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
@@ -347,7 +347,10 @@
     timeago().render(document.querySelectorAll('.timeago'), languageCode);
     timeago.cancel();  
   </script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
 
 
 

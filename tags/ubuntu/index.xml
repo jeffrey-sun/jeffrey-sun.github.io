@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on Jeffrey&#39;s blog</title>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 20 Mar 2018 17:44:34 +0000</pubDate>
       
       <guid>https://blog.jeffreysun.net/post/2018/03/20/ubuntu%E7%99%BB%E5%BD%95%E6%8F%90%E7%A4%BA%E6%9C%89%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%8F%AF%E4%BB%A5%E6%9B%B4%E6%96%B0/</guid>
-      <description>Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。 升级</description>
+      <description>Ubuntu 系统在登录的时候经常会提醒有软件可以更新。内容如下： 1 2 3 4 5 6 7 8 9 10 Welcome to Ubuntu 16.04.4 LTS (GNU/Linux 4.13.0-36-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage 28 个可升级软件包。 16 个安全更新。</description>
     </item>
     
     <item>
